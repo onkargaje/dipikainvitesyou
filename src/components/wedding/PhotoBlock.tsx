@@ -101,12 +101,12 @@ export const PhotoBlock = ({
     <section className="py-20 md:py-28 px-6">
       <div className="container max-w-3xl">
         <Reveal>
-          <div className="relative polaroid mx-auto max-w-xl">
+          <div className="relative polaroid max-w-xl border-0 px-0 text-center mx-0 border-secondary-foreground bg-secondary-foreground text-primary-foreground">
             <img
               src={image}
               alt={title || caption || ""}
               loading="lazy"
-              className="w-full aspect-[4/5] object-cover rounded-sm"
+              className="w-full aspect-[4/5] object-cover text-sm rounded border py-0 border-none px-0 mx-0 shadow-none opacity-100"
             />
             {title && (
               <div className="absolute inset-3 bottom-12 flex items-end justify-center pointer-events-none">
