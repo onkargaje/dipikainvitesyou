@@ -55,7 +55,7 @@ export const EventCards = () => {
                   className={`group relative w-full text-left rounded-3xl border ${s.border} ${s.bg} backdrop-blur-md p-8 md:p-10 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.5)] hover:border-gold/70 bg-grain`}
                 >
                   <div
-                    className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${s.accent} mix-blend-overlay text-primary-foreground text-2xl bg-primary`}
+                    className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${s.accent} mix-blend-overlay text-primary-foreground text-2xl bg-[sidebar-primary-foreground] bg-accent-foreground`}
                   />
                   <div className="absolute -top-20 -right-20 h-48 w-48 rounded-full bg-gold/20 blur-3xl group-hover:bg-gold/40 transition-colors duration-700" />
 
@@ -63,7 +63,7 @@ export const EventCards = () => {
                     <p className="uppercase tracking-[0.4em] opacity-70 mb-3 text-sm">
                       Function 0{i + 1}
                     </p>
-                    <h3 className={`font-serif text-4xl md:text-9xl ${s.text} mb-2`}>{e.name}</h3>
+                    <h3 className={`font-serif text-4xl md:text-9xl text-sidebar-ring mb-2 font-bold`}>{e.name}</h3>
                     <p className="opacity-80 font-serif text-accent-foreground text-4xl">{e.date}</p>
                     <p className="mt-6 text-sm opacity-80 inline-flex items-center gap-2">
                       Tap to view details
