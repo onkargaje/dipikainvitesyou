@@ -57,7 +57,6 @@ const Index = () => {
           caption="Forever begins here"
         />
 
-        <Gifts />
         <Blessings />
         <ScratchReveal />
         <MapSection />
