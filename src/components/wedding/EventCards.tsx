@@ -39,11 +39,11 @@ export const EventCards = () => {
                 {/* Dark gradient for legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
 
-                <div className="relative p-7 md:p-8 text-white">
-                  <p className="uppercase tracking-[0.4em] opacity-80 mb-2 text-xs">
+                <div className="relative p-7 md:p-8 text-white px-[60px] text-left my-0 py-[350px]">
+                  <p className="uppercase tracking-[0.4em] opacity-80 mb-2 text-xs text-center mx-0 my-0 py-0">
                     Function 0{i + 1}
                   </p>
-                  <h3 className="font-serif text-4xl md:text-6xl mb-5 font-bold drop-shadow-lg">
+                  <h3 className="font-serif text-4xl md:text-6xl mb-5 font-bold drop-shadow-lg text-center my-0 py-0">
                     {e.name}
                   </h3>
 
