@@ -93,7 +93,7 @@ export const EventCards = () => {
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className={`relative w-full max-w-md rounded-3xl border ${themeStyles[active.theme].border} ${themeStyles[active.theme].bg} backdrop-blur-2xl p-8 md:p-10 shadow-2xl bg-grain font-extrabold`}
+              className={`relative w-full max-w-md rounded-3xl border ${themeStyles[active.theme].border} ${themeStyles[active.theme].bg} backdrop-blur-2xl p-8 md:p-10 shadow-2xl bg-grain font-extrabold bg-secondary text-secondary-foreground`}
             >
               <button
                 onClick={() => setActive(null)}
@@ -106,16 +106,16 @@ export const EventCards = () => {
               <p className="text-[0.65rem] uppercase tracking-[0.4em] opacity-70 mb-2">
                 You are invited to
               </p>
-              <h3 className={`font-serif text-5xl ${themeStyles[active.theme].text} mb-1 font-extrabold`}>
+              <h3 className={`font-serif text-5xl mb-1 font-extrabold text-secondary-foreground`}>
                 {active.name}
               </h3>
               <div className="divider-ornament my-6" />
 
               <ul className={`space-y-4 ${themeStyles[active.theme].text}`}>
-                <Row icon={<Calendar className="h-4 w-4" />} label="Date" value={active.date} />
-                <Row icon={<Clock className="h-4 w-4" />} label="Time" value={active.time} />
-                <Row icon={<MapPin className="h-4 w-4" />} label="Venue" value={active.venue} />
-                <Row icon={<Shirt className="h-4 w-4" />} label="Dress Code" value={active.dress} />
+                <Row icon={<Calendar className="h-4 w-4 text-secondary-foreground" />} label="Date" value={active.date} />
+                <Row icon={<Clock className="h-4 w-4 text-secondary-foreground" />} label="Time" value={active.time} />
+                <Row icon={<MapPin className="h-4 w-4 text-secondary-foreground" />} label="Venue" value={active.venue} />
+                <Row icon={<Shirt className="h-4 w-4 text-secondary-foreground opacity-0" />} label="​" value={active.dress} />
               </ul>
             </motion.div>
           </motion.div>
@@ -129,8 +129,8 @@ const Row = ({ icon, label, value }: { icon: React.ReactNode; label: string; val
   <li className="flex items-start gap-4">
     <span className="mt-1 opacity-70">{icon}</span>
     <div>
-      <p className="text-[0.65rem] uppercase tracking-[0.3em] opacity-70">{label}</p>
-      <p className="font-serif text-xl">{value}</p>
+      <p className="text-[0.65rem] uppercase tracking-[0.3em] opacity-70 text-secondary-foreground">{label}</p>
+      <p className="font-serif text-xl text-secondary-foreground">{value}</p>
     </div>
   </li>
 );

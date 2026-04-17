@@ -21,10 +21,10 @@ export const events = [
   {
     key: "engagement",
     name: "Engagement",
-    date: "10 February 2026",
-    time: "7:00 PM onwards",
-    venue: "Sheesh Mahal, The Leela Palace",
-    dress: "Pastel & Ivory",
+    date: "2 May 2026",
+    time: "11:00 AM onwards",
+    venue: "​Madhura Lawns, Harsool",
+    dress: "​",
     theme: "engagement",
   },
   {
