@@ -47,7 +47,7 @@ export const Countdown = () => {
         <Reveal delay={0.2}>
           <div className="glass rounded-3xl p-8 md:p-14 text-center bg-grain">
             {t ? (
-              <div className="flex justify-center gap-3 md:gap-8 flex-wrap text-base">
+              <div className="flex justify-center gap-3 flex-wrap text-base md:gap-[20px]">
                 <Cell value={t.d} label="Days" />
                 <span className="font-serif text-5xl md:text-7xl text-gold/40 self-start">·</span>
                 <Cell value={t.h} label="Hours" />
