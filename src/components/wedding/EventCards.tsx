@@ -93,7 +93,7 @@ export const EventCards = () => {
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className={`relative w-full max-w-md rounded-3xl border ${themeStyles[active.theme].border} ${themeStyles[active.theme].bg} backdrop-blur-2xl p-8 md:p-10 shadow-2xl bg-grain font-extrabold bg-secondary text-secondary-foreground`}
+              className={`relative w-full max-w-md rounded-3xl border ${themeStyles[active.theme].border} ${themeStyles[active.theme].bg} backdrop-blur-2xl p-8 md:p-10 shadow-2xl bg-grain font-extrabold text-secondary-foreground bg-white`}
             >
               <button
                 onClick={() => setActive(null)}
