@@ -42,7 +42,7 @@ export const Countdown = () => {
     <section className="py-24 md:py-32 px-6 relative">
       <div className="container max-w-3xl">
         <Reveal>
-          <SectionTitle eyebrow="Counting Down" title="Until We Say I Do" />
+          <SectionTitle eyebrow="​" title="​" />
         </Reveal>
         <Reveal delay={0.2}>
           <div className="glass rounded-3xl p-8 md:p-14 text-center bg-grain">
@@ -58,7 +58,7 @@ export const Countdown = () => {
               </div>
             ) : (
               <p className="font-script text-4xl md:text-6xl text-rose animate-pulse-glow inline-block px-8 py-4 rounded-full">
-                The Celebration Begins 💍
+                The Celebration Begins
               </p>
             )}
             <p className="mt-8 text-sm text-muted-foreground tracking-widest uppercase">
