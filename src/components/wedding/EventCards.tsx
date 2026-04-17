@@ -29,7 +29,7 @@ export const EventCards = () => {
           {events.map((e, i) => (
             <Reveal key={e.key} delay={i * 0.1} className="py-0">
               <article
-                className="group relative w-full text-left rounded-3xl overflow-hidden border border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[460px] flex flex-col justify-end"
+                className="group relative w-full text-left rounded-3xl overflow-hidden border border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[460px] flex flex-col justify-center"
                 style={{
                   backgroundImage: `url(${themeBg[e.theme]})`,
                   backgroundSize: "cover",
@@ -39,7 +39,7 @@ export const EventCards = () => {
                 {/* Dark gradient for legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 my-0 opacity-25 py-0" />
 
-                <div className="relative p-7 md:p-8 text-white my-0 px-px py-[250px] text-center opacity-100">
+                <div className="relative p-7 md:p-8 text-white my-0 px-px py-0 text-center opacity-100 flex flex-col items-center justify-center min-h-[460px]">
                   <p className="uppercase tracking-[0.4em] opacity-80 mb-2 text-center text-xs text-secondary-foreground mx-[49px] my-0 px-0 py-0">
                     Function 0{i + 1}
                   </p>
