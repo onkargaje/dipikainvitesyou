@@ -21,7 +21,7 @@ export const Hero = () => {
           initial={reduced ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 0.2 }}
-          className="text-xs uppercase tracking-[0.5em] text-rose mb-6"
+          className="uppercase tracking-[0.5em] text-rose mb-6 text-base"
         >
           Save the Date · {wedding.dateLabel}
         </motion.p>
@@ -43,7 +43,7 @@ export const Hero = () => {
           className="flex items-center justify-center gap-4 my-4"
         >
           <div className="h-px w-16 bg-gradient-to-r from-transparent to-gold/70" />
-          <span className="font-serif italic text-2xl text-gold-deep">&</span>
+          <span className="font-serif italic text-gold-deep text-5xl">&</span>
           <div className="h-px w-16 bg-gradient-to-l from-transparent to-gold/70" />
         </motion.div>
 

@@ -1,9 +1,9 @@
 // Central place to edit wedding data
 export const wedding = {
-  bride: "Anaya",
-  groom: "Aarav",
-  date: "2026-05-02T18:00:00", // ISO
-  dateLabel: "2 May, 2026",
+  bride: "Akshay Rathod",
+  groom: "Dipika Aade",
+  date: "2026-05-03T18:00:00", // ISO
+  dateLabel: "3 May, 2026",
   tagline: "We are getting married",
   venueShort: "Madhura lawns",
   mapLink: "https://maps.app.goo.gl/TocWJixFgPjHS6dr9",
