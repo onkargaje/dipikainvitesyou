@@ -39,10 +39,10 @@ export const events = [
   {
     key: "sangeet",
     name: "Sangeet",
-    date: "13 February 2026",
+    date: "2 May 2026",
     time: "8:00 PM onwards",
-    venue: "Royal Ballroom, The Leela Palace",
-    dress: "Glamour & Glow",
+    venue: "​Madhura Lawns",
+    dress: "Anything Sparkling",
     theme: "sangeet",
   },
   {
