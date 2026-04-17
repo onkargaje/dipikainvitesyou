@@ -37,9 +37,9 @@ export const EventCards = () => {
                 }}
               >
                 {/* Dark gradient for legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 my-0 opacity-25 py-0" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 opacity-25 py-[23px] my-[23px] text-center" />
 
-                <div className="relative p-7 md:p-8 text-white my-0 px-px py-4 text-center opacity-100 flex flex-col items-center justify-start">
+                <div className="relative p-7 md:p-8 text-white my-0 text-center opacity-100 px-0 items-center justify-start flex flex-col mx-[13px] py-[35px] border-secondary-foreground border-none bg-primary-foreground">
                   <p className="uppercase tracking-[0.4em] opacity-80 text-center text-xs text-secondary-foreground mx-[49px] px-0 mr-[45px] mb-0 my-0 py-0">
                     Function 0{i + 1}
                   </p>
@@ -68,6 +68,6 @@ export const EventCards = () => {
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3">
     <span className="mt-1 opacity-90 text-gold">{icon}</span>
-    <p className="font-serif text-base md:text-lg leading-snug">{value}</p>
+    <p className="font-serif text-base md:text-lg leading-snug my-0 py-0 text-center">{value}</p>
   </li>
 );
