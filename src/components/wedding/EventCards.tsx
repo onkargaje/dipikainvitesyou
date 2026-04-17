@@ -115,7 +115,7 @@ export const EventCards = () => {
                 <Row icon={<Calendar className="h-4 w-4 text-secondary-foreground" />} label="Date" value={active.date} />
                 <Row icon={<Clock className="h-4 w-4 text-secondary-foreground" />} label="Time" value={active.time} />
                 <Row icon={<MapPin className="h-4 w-4 text-secondary-foreground" />} label="Venue" value={active.venue} />
-                <Row icon={<Shirt className="h-4 w-4 text-secondary-foreground opacity-0" />} label="​" value={active.dress} />
+                <Row icon={<Shirt className="w-4 text-secondary-foreground opacity-100 py-0 h-[30px] my-[10px]" />} label="​" value={active.dress} />
               </ul>
             </motion.div>
           </motion.div>
