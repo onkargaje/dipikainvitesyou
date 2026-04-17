@@ -1,0 +1,57 @@
+// Central place to edit wedding data
+export const wedding = {
+  bride: "Anaya",
+  groom: "Aarav",
+  date: "2026-02-14T18:00:00", // ISO
+  dateLabel: "14 February, 2026",
+  tagline: "We are getting married",
+  venueShort: "The Leela Palace, Udaipur",
+  mapLink: "https://maps.app.goo.gl/TocWJixFgPjHS6dr9",
+  mapEmbed:
+    "https://www.google.com/maps?q=The+Leela+Palace+Udaipur&output=embed",
+  upi: "aarav.anaya@okhdfc",
+  bank: {
+    name: "Aarav Mehta",
+    account: "•••• •••• 4421",
+    ifsc: "HDFC0001234",
+  },
+};
+
+export const events = [
+  {
+    key: "engagement",
+    name: "Engagement",
+    date: "10 February 2026",
+    time: "7:00 PM onwards",
+    venue: "Sheesh Mahal, The Leela Palace",
+    dress: "Pastel & Ivory",
+    theme: "engagement",
+  },
+  {
+    key: "haldi",
+    name: "Haldi",
+    date: "12 February 2026",
+    time: "11:00 AM onwards",
+    venue: "Garden Lawns, The Leela Palace",
+    dress: "Sunshine Yellow",
+    theme: "haldi",
+  },
+  {
+    key: "sangeet",
+    name: "Sangeet",
+    date: "13 February 2026",
+    time: "8:00 PM onwards",
+    venue: "Royal Ballroom, The Leela Palace",
+    dress: "Glamour & Glow",
+    theme: "sangeet",
+  },
+  {
+    key: "phere",
+    name: "Phere",
+    date: "14 February 2026",
+    time: "6:00 PM onwards",
+    venue: "Lakeside Mandap, The Leela Palace",
+    dress: "Royal Traditional",
+    theme: "phere",
+  },
+] as const;
