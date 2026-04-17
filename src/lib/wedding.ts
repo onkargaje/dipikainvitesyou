@@ -24,7 +24,7 @@ export const events = [
     date: "2 May 2026",
     time: "11:00 AM onwards",
     venue: "​Madhura Lawns, Harsool",
-    dress: "Traditional",
+    dress: "Traditiona",
     theme: "engagement",
   },
   {
@@ -42,7 +42,7 @@ export const events = [
     date: "2 May 2026",
     time: "8:00 PM onwards",
     venue: "​Madhura Lawns",
-    dress: "Traditiona",
+    dress: "Anything Sparkling",
     theme: "sangeet",
   },
   {
