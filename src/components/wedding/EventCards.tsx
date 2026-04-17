@@ -43,7 +43,7 @@ export const EventCards = () => {
                   <p className="uppercase tracking-[0.4em] opacity-80 mb-2 text-xs text-center mx-0 my-0 py-0">
                     Function 0{i + 1}
                   </p>
-                  <h3 className="font-serif text-4xl md:text-6xl mb-5 font-bold drop-shadow-lg text-center my-0 py-0">
+                  <h3 className="font-serif text-4xl md:text-6xl mb-5 font-bold drop-shadow-lg my-0 py-0">
                     {e.name}
                   </h3>
 
