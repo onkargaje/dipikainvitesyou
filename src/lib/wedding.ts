@@ -5,7 +5,7 @@ export const wedding = {
   date: "2026-05-03T18:00:00", // ISO
   dateLabel: "3 May, 2026",
   tagline: "We are getting married",
-  venueShort: "Madhura lawns",
+  venueShort: "Madhura lawns, Harsool",
   mapLink: "https://maps.app.goo.gl/TocWJixFgPjHS6dr9",
   mapEmbed:
     "https://www.google.com/maps?q=The+Leela+Palace+Udaipur&output=embed",
