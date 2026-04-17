@@ -1,16 +1,70 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Hero } from "@/components/wedding/Hero";
+import { PhotoBlock } from "@/components/wedding/PhotoBlock";
+import { Countdown } from "@/components/wedding/Countdown";
+import { Quote } from "@/components/wedding/Quote";
+import { EventCards } from "@/components/wedding/EventCards";
+import { Gifts } from "@/components/wedding/Gifts";
+import { Blessings } from "@/components/wedding/Blessings";
+import { ScratchReveal } from "@/components/wedding/ScratchReveal";
+import { MapSection } from "@/components/wedding/MapSection";
+import { Footer } from "@/components/wedding/Footer";
+import { PetalField, FloatingOrbs } from "@/components/wedding/PetalField";
+import photo1 from "@/assets/photo-1.jpg";
+import photo2 from "@/assets/photo-2.jpg";
+import photo3 from "@/assets/photo-3.jpg";
+import photo4 from "@/assets/photo-4.jpg";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="relative overflow-x-hidden">
+      <FloatingOrbs />
+      <PetalField density={20} />
+
+      <div className="relative z-10">
+        <Hero />
+
+        <PhotoBlock
+          variant="center"
+          image={photo1}
+          title="Our Beginning"
+        />
+
+        <Countdown />
+
+        <PhotoBlock
+          variant="left"
+          image={photo2}
+          title="Two Souls, One Story"
+          text="From quiet conversations to whispered promises — every moment led us here. To this season, this love, this forever."
+          rotate={-2}
+        />
+
+        <Quote />
+
+        <PhotoBlock
+          variant="right"
+          image={photo3}
+          title="A Little Laughter"
+          text="Because love is grand, but laughter is the music it dances to. Here's to a lifetime of inside jokes and stolen smiles."
+          rotate={2}
+        />
+
+        <EventCards />
+
+        <PhotoBlock
+          variant="feature"
+          image={photo4}
+          caption="Forever begins here"
+        />
+
+        <Gifts />
+        <Blessings />
+        <ScratchReveal />
+        <MapSection />
+        <Footer />
+      </div>
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
