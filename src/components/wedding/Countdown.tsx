@@ -42,12 +42,12 @@ export const Countdown = () => {
     <section className="py-24 md:py-32 px-6 relative">
       <div className="container max-w-3xl">
         <Reveal>
-          <SectionTitle eyebrow="​" title="​" />
+          <SectionTitle eyebrow="​" title="Counting Down to Forever" />
         </Reveal>
         <Reveal delay={0.2}>
           <div className="glass rounded-3xl p-8 md:p-14 text-center bg-grain">
             {t ? (
-              <div className="flex justify-center gap-3 md:gap-8 flex-wrap">
+              <div className="flex justify-center gap-3 md:gap-8 flex-wrap text-base">
                 <Cell value={t.d} label="Days" />
                 <span className="font-serif text-5xl md:text-7xl text-gold/40 self-start">·</span>
                 <Cell value={t.h} label="Hours" />
