@@ -70,7 +70,7 @@ export const EventCards = () => {
 
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3 py-0">
-    <span className="mt-1 opacity-90 text-gold">{icon}</span>
-    <p className="font-serif leading-snug font-extrabold text-base md:text-xl whitespace-pre-line text-left text-secondary-foreground">{value}</p>
+    <span className="mt-1 text-gold-deep">{icon}</span>
+    <p className="font-serif leading-snug font-semibold text-base md:text-lg whitespace-pre-line text-left text-foreground">{value}</p>
   </li>
 );
