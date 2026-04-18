@@ -14,15 +14,15 @@ const calc = (target: Date) => {
 };
 
 const Cell = ({ value, label }: { value: number; label: string }) => (
-  <div className="flex flex-col items-center min-w-[70px] md:min-w-[110px]">
+  <div className="flex flex-col items-center min-w-[44px] md:min-w-[110px]">
     <div
       key={value}
-      className="font-serif text-5xl md:text-7xl text-rose tabular-nums animate-fade-in"
+      className="font-serif text-2xl md:text-7xl text-rose tabular-nums animate-fade-in"
       style={{ textShadow: "0 0 30px hsl(var(--gold) / 0.4)" }}
     >
       {String(value).padStart(2, "0")}
     </div>
-    <span className="text-[0.65rem] md:text-xs uppercase tracking-[0.3em] text-muted-foreground mt-2">
+    <span className="text-[0.55rem] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground mt-1 md:mt-2">
       {label}
     </span>
   </div>
@@ -45,15 +45,15 @@ export const Countdown = () => {
           <SectionTitle eyebrow="​" title="Counting Down to Forever" />
         </Reveal>
         <Reveal delay={0.2}>
-          <div className="glass rounded-3xl p-8 md:p-14 text-center bg-grain text-lg">
+          <div className="glass rounded-3xl p-4 md:p-14 text-center bg-grain text-lg">
             {t ? (
-              <div className="flex justify-center gap-3 flex-wrap text-base md:gap-[20px]">
+              <div className="flex justify-center items-start gap-1 md:gap-[20px] flex-nowrap">
                 <Cell value={t.d} label="Days" />
-                <span className="font-serif text-5xl md:text-7xl text-gold/40 self-start">·</span>
+                <span className="font-serif text-2xl md:text-7xl text-gold/40 self-start leading-none">·</span>
                 <Cell value={t.h} label="Hours" />
-                <span className="font-serif text-5xl md:text-7xl text-gold/40 self-start">·</span>
+                <span className="font-serif text-2xl md:text-7xl text-gold/40 self-start leading-none">·</span>
                 <Cell value={t.m} label="Minutes" />
-                <span className="font-serif text-5xl md:text-7xl text-gold/40 self-start">·</span>
+                <span className="font-serif text-2xl md:text-7xl text-gold/40 self-start leading-none">·</span>
                 <Cell value={t.s} label="Seconds" />
               </div>
             ) : (
