@@ -101,7 +101,7 @@ export const PhotoBlock = ({
     <section className="py-20 md:py-28 px-6">
       <div className="container max-w-3xl">
         <Reveal>
-          <div className="relative polaroid max-w-xl border-0 px-0 text-center mx-0 border-secondary-foreground bg-secondary-foreground text-primary-foreground">
+          <div className="relative polaroid max-w-xl border-0 px-0 text-center mx-0 border-secondary-foreground text-primary-foreground bg-destructive-foreground">
             <img
               src={image}
               alt={title || caption || ""}
