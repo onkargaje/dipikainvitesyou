@@ -27,9 +27,9 @@ export const EventCards = () => {
 
         <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
           {events.map((e, i) => (
-            <Reveal key={e.key} delay={i * 0.1} className="py-0">
+            <Reveal key={e.key} delay={i * 0.1} className="py-0 opacity-100 border-8 border-destructive-foreground border-none shadow-none rounded">
               <article
-                className="group relative w-full text-left rounded-3xl overflow-hidden border border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[460px] flex flex-col justify-start"
+                className="group relative w-full text-left rounded-3xl overflow-hidden border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[460px] flex flex-col justify-start border-0 bg-muted-foreground opacity-100"
                 style={{
                   backgroundImage: `url(${themeBg[e.theme]})`,
                   backgroundSize: "cover",
@@ -39,11 +39,11 @@ export const EventCards = () => {
                 {/* Dark gradient for legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 opacity-25 py-[23px] my-[23px] text-center" />
 
-                <div className="relative p-7 md:p-8 my-0 text-center px-0 items-center justify-start flex flex-col py-[35px] border-secondary-foreground border-none bg-destructive opacity-0 text-secondary-foreground mx-0">
+                <div className="relative p-7 md:p-8 my-0 text-center px-0 items-center justify-start flex flex-col py-[35px] border-none text-secondary-foreground mx-0 opacity-100 border-secondary-foreground shadow-none bg-muted-foreground">
                   <p className="uppercase tracking-[0.4em] opacity-80 text-center text-xs text-secondary-foreground mx-[49px] px-0 mr-[45px] mb-0 my-0 py-0">
                     Function 0{i + 1}
                   </p>
-                  <h3 className="text-4xl mb-5 drop-shadow-lg my-0 py-0 text-muted-foreground font-extrabold font-serif md:text-xl">
+                  <h3 className="text-4xl mb-5 drop-shadow-lg my-0 py-0 font-extrabold font-serif md:text-xl text-secondary-foreground bg-muted-foreground">
                     {e.name}
                   </h3>
 
@@ -68,6 +68,6 @@ export const EventCards = () => {
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3">
     <span className="mt-1 opacity-90 text-gold">{icon}</span>
-    <p className="font-serif text-base md:text-lg leading-snug my-0 py-0 text-center">{value}</p>
+    <p className="font-serif text-base md:text-lg leading-snug my-0 py-0 text-center text-secondary-foreground opacity-100 shadow-none font-extrabold">{value}</p>
   </li>
 );
