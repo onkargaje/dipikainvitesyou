@@ -75,6 +75,20 @@ export const Hero = () => {
         >
           Save the Date · {wedding.dateLabel}
         </motion.p>
+
+        <motion.div
+          initial={reduced ? false : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4, delay: 2.4 }}
+          className="mt-10 max-w-2xl mx-auto"
+        >
+          <p className="font-serif text-rose-deep text-lg md:text-2xl leading-relaxed whitespace-pre-line">
+            {`॥ समञ्जन्तु विश्वे देवाः\nसमापो हृदयानि नौ ।\nसं मातरिश्वा सं धाता\nसमुदेष्ट्रि दधातु नौ ॥`}
+          </p>
+          <p className="mt-4 font-serif italic text-muted-foreground text-sm md:text-base">
+            May divine forces unite your hearts and keep you together in harmony forever.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
