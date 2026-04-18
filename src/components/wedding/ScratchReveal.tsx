@@ -94,7 +94,7 @@ export const ScratchReveal = () => {
               <p className="text-muted-foreground italic">
                 Thank you for being a part of our forever. We can't wait to celebrate with you.
               </p>
-              <p className="font-serif italic text-sm text-rose mt-4">— Aarav & Anaya</p>
+              
             </div>
 
             {/* Scratch canvas */}
