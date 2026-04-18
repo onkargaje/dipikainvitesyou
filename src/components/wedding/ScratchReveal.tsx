@@ -63,7 +63,7 @@ export const ScratchReveal = () => {
       const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
       let cleared = 0;
       for (let i = 3; i < data.length; i += 40) if (data[i] === 0) cleared++;
-      if (cleared / (data.length / 40) > 0.45) setRevealed(true);
+      if (cleared / (data.length / 40) > 0.85) setRevealed(true);
     }
   };
 
@@ -90,8 +90,8 @@ export const ScratchReveal = () => {
           >
             {/* Hidden message */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-blush/60 to-cream/80">
-              <p className="font-script text-4xl md:text-5xl text-rose mb-3">You make our day complete.</p>
-              <p className="text-muted-foreground italic">
+              <p className="font-script text-rose mb-3 text-xs">You make our day complete.</p>
+              <p className="text-muted-foreground italic text-xs">
                 Thank you for being a part of our forever. We can't wait to celebrate with you.
               </p>
               
