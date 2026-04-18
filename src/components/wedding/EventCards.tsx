@@ -29,7 +29,7 @@ export const EventCards = () => {
           {events.map((e, i) => (
             <Reveal key={e.key} delay={i * 0.1} className="opacity-100">
               <article
-                className="group relative w-full text-left rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] aspect-[3/4] max-w-md mx-auto w-full flex flex-col items-center justify-center px-6 py-12 md:px-16 md:py-20 bg-cream"
+                className="group relative w-full text-left rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] aspect-[3/4] max-w-md mx-auto w-full flex flex-col items-center justify-start px-6 py-12 md:px-16 md:py-20 bg-cream"
                 style={{
                   backgroundImage: `url(${themeBg[e.theme]})`,
                   backgroundSize: "contain",
