@@ -5,7 +5,7 @@ import { wedding } from "@/lib/wedding";
 export const Hero = () => {
   const reduced = useReducedMotion();
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-grain">
+    <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden bg-grain pt-32 md:pt-0 pb-16">
       <div className="absolute inset-0">
         <img
           src={heroBg}
@@ -13,7 +13,7 @@ export const Hero = () => {
           aria-hidden="true"
           className="h-full w-full object-cover scale-100 opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/20 via-blush/15 to-cream/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/30 via-blush/20 to-cream/60" />
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl">
