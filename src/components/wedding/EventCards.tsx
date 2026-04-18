@@ -39,20 +39,20 @@ export const EventCards = () => {
                 {/* Dark gradient for legibility */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/70" />
 
-                <div className="relative z-10 text-center text-secondary-foreground bg-transparent flex-col w-full flex items-center justify-start pt-10 md:pt-16 pb-10">
-                  <p className="uppercase tracking-[0.4em] opacity-90 text-center text-secondary-foreground text-sm md:text-base">
+                <div className="relative z-10 text-center text-secondary-foreground bg-transparent flex-col w-full flex items-center justify-start py-[350px]">
+                  <p className="uppercase tracking-[0.4em] opacity-90 text-center text-secondary-foreground text-[0.7rem] md:text-sm">
                     Function 0{i + 1}
                   </p>
-                  <h3 className="mt-3 mb-6 md:mb-8 drop-shadow-lg font-extrabold font-serif text-secondary-foreground text-4xl md:text-7xl">
+                  <h3 className="mt-2 mb-5 md:mb-6 drop-shadow-lg font-extrabold font-serif text-secondary-foreground text-3xl md:text-6xl">
                     {e.name}
                   </h3>
 
-                  <ul className="space-y-3 md:space-y-4 inline-block text-left">
-                    <Row icon={<Calendar className="h-5 w-5 md:h-6 md:w-6" />} value={e.date} />
-                    <Row icon={<Clock className="h-5 w-5 md:h-6 md:w-6" />} value={e.time} />
-                    <Row icon={<MapPin className="h-5 w-5 md:h-6 md:w-6" />} value={e.venue} />
+                  <ul className="space-y-2 md:space-y-2.5 inline-block text-left">
+                    <Row icon={<Calendar className="h-4 w-4" />} value={e.date} />
+                    <Row icon={<Clock className="h-4 w-4" />} value={e.time} />
+                    <Row icon={<MapPin className="h-4 w-4" />} value={e.venue} />
                     {e.dress && e.dress.trim() && (
-                      <Row icon={<Shirt className="h-5 w-5 md:h-6 md:w-6" />} value={e.dress} />
+                      <Row icon={<Shirt className="h-4 w-4" />} value={e.dress} />
                     )}
                   </ul>
                 </div>
@@ -68,6 +68,6 @@ export const EventCards = () => {
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3 py-0">
     <span className="mt-1 opacity-90 text-gold">{icon}</span>
-    <p className="font-serif leading-snug text-secondary-foreground font-extrabold text-left text-xl md:text-3xl whitespace-pre-line">{value}</p>
+    <p className="font-serif leading-snug text-secondary-foreground font-extrabold text-left text-lg md:text-2xl whitespace-pre-line">{value}</p>
   </li>
 );
