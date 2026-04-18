@@ -1,7 +1,7 @@
 import { Reveal } from "./Reveal";
 
 export const Quote = () => (
-  <section className="py-32 md:py-40 px-6 relative">
+  <section className="py-16 md:py-20 px-6 relative">
     <div className="container max-w-3xl text-center">
       <Reveal>
         <span className="font-serif text-8xl md:text-9xl text-gold/40 leading-none block">"</span>
