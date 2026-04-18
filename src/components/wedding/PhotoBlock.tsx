@@ -19,7 +19,7 @@ export const PhotoBlock = ({
 }: PhotoBlockProps) => {
   if (variant === "feature") {
     return (
-      <section className="py-24 md:py-32 px-6">
+      <section className="py-12 md:py-16 px-6">
         <div className="container max-w-3xl">
           <Reveal>
             <div
@@ -57,7 +57,7 @@ export const PhotoBlock = ({
   if (variant === "left" || variant === "right") {
     const reverse = variant === "right";
     return (
-      <section className="py-20 md:py-28 px-6">
+      <section className="py-10 md:py-14 px-6">
         <div
           className={`container max-w-5xl grid md:grid-cols-2 gap-10 md:gap-16 items-center ${
             reverse ? "md:[&>*:first-child]:order-2" : ""
@@ -98,7 +98,7 @@ export const PhotoBlock = ({
 
   // center with overlay text
   return (
-    <section className="py-20 md:py-28 px-6">
+    <section className="py-10 md:py-14 px-6">
       <div className="container max-w-3xl">
         <Reveal>
           <div className="relative polaroid max-w-xl border-0 px-0 text-center mx-0 border-secondary-foreground text-primary-foreground bg-destructive-foreground">
