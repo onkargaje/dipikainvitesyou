@@ -37,13 +37,13 @@ export const EventCards = () => {
                 }}
               >
                 {/* Dark gradient for legibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/70" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/70 opacity-0" />
 
-                <div className="relative z-10 text-center text-secondary-foreground bg-transparent flex-col w-full flex items-center justify-start py-[350px]">
+                <div className="relative z-10 text-center text-secondary-foreground bg-transparent flex-col w-full py-[350px] flex items-center justify-start">
                   <p className="uppercase tracking-[0.4em] opacity-90 text-center text-secondary-foreground text-[0.7rem] md:text-sm">
                     Function 0{i + 1}
                   </p>
-                  <h3 className="mt-2 mb-5 md:mb-6 drop-shadow-lg font-extrabold font-serif text-secondary-foreground text-3xl md:text-6xl">
+                  <h3 className="mt-2 mb-5 md:mb-6 drop-shadow-lg font-extrabold font-serif text-secondary-foreground md:text-6xl text-7xl">
                     {e.name}
                   </h3>
 
@@ -68,6 +68,6 @@ export const EventCards = () => {
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3 py-0">
     <span className="mt-1 opacity-90 text-gold">{icon}</span>
-    <p className="font-serif leading-snug text-secondary-foreground font-extrabold text-left text-lg md:text-2xl whitespace-pre-line">{value}</p>
+    <p className="font-serif leading-snug font-extrabold md:text-2xl whitespace-pre-line text-left text-secondary-foreground text-2xl">{value}</p>
   </li>
 );
