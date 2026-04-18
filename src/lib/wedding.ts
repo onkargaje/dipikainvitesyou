@@ -8,7 +8,7 @@ export const wedding = {
   venueShort: "Madhura lawns, Harsool",
   mapLink: "https://maps.app.goo.gl/TocWJixFgPjHS6dr9",
   mapEmbed:
-    "https://www.google.com/maps?q=The+Leela+Palace+Udaipur&output=embed",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.7340509433793!2d75.35013937613051!3d19.9356089244232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdbbd6846579adf%3A0xbecf1309695d7547!2sMadhura%20Lawns%20And%20Mangal%20Karyalaya!5e0!3m2!1sen!2sin!4v1776477467231!5m2!1sen!2sin",
   upi: "aarav.anaya@okhdfc",
   bank: {
     name: "Aarav Mehta",
