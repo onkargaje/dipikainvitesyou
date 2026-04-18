@@ -16,7 +16,7 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-cream/30 via-blush/20 to-cream/60" />
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
+      <div className="relative z-10 text-center px-6 max-w-4xl py-[300px]">
         <motion.h1
           initial={reduced ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

@@ -45,7 +45,7 @@ export const Countdown = () => {
           <SectionTitle eyebrow="​" title="Counting Down to Forever" />
         </Reveal>
         <Reveal delay={0.2}>
-          <div className="glass rounded-3xl p-8 md:p-14 text-center bg-grain">
+          <div className="glass rounded-3xl p-8 md:p-14 text-center bg-grain text-lg">
             {t ? (
               <div className="flex justify-center gap-3 flex-wrap text-base md:gap-[20px]">
                 <Cell value={t.d} label="Days" />
