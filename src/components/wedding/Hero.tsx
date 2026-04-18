@@ -6,7 +6,7 @@ export const Hero = () => {
   const reduced = useReducedMotion();
   return (
     <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden bg-grain pt-20 md:pt-0 pb-8">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pt-48 md:pt-64">
         <img
           src={heroBg}
           alt=""
