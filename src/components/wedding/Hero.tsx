@@ -21,7 +21,7 @@ export const Hero = () => {
           initial={reduced ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="font-script text-7xl md:text-9xl text-rose leading-[0.9] mb-2"
+          className="font-script md:text-9xl text-rose leading-[0.9] mb-2 text-4xl"
           style={{ textShadow: "0 4px 30px hsl(var(--blush-deep) / 0.4)" }}
         >
           {wedding.groom}
@@ -42,7 +42,7 @@ export const Hero = () => {
           initial={reduced ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.6, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="font-script text-7xl md:text-9xl text-rose leading-[0.9]"
+          className="font-script md:text-9xl text-rose leading-[0.9] text-4xl"
           style={{ textShadow: "0 4px 30px hsl(var(--blush-deep) / 0.4)" }}
         >
           {wedding.bride}
