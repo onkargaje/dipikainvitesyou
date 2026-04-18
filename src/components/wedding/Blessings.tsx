@@ -10,10 +10,10 @@ interface Blessing {
 }
 
 const seed: Blessing[] = [
-  { id: 1, name: "Priya & Arjun", message: "Wishing you a lifetime of love, laughter, and beautiful memories. ✨" },
-  { id: 2, name: "Rohan", message: "May your love story be a beautiful one. Cheers to forever!" },
-  { id: 3, name: "Meera Aunty", message: "Bless you both with happiness, health, and togetherness always." },
-  { id: 4, name: "The Sharmas", message: "Two hearts, one soul — congratulations on your beautiful journey." },
+  { id: 1, name: "Kshitij", message: "Wishing you a lifetime of love, laughter, and beautiful memories. ✨" },
+  { id: 2, name: "Mom & Dad", message: "May your love story be a beautiful one. Cheers to forever!" },
+  { id: 3, name: "Shivani", message: "Bless you both with happiness, health, and togetherness always." },
+  { id: 4, name: "Onkar", message: "Two hearts, one soul — congratulations on your beautiful journey." },
 ];
 
 export const Blessings = () => {
@@ -102,7 +102,7 @@ export const Blessings = () => {
                   >
                     <Heart className="h-4 w-4 text-rose/60 absolute top-4 right-4" />
                     <p className="text-sm leading-relaxed text-foreground/90 italic">"{b.message}"</p>
-                    <p className="font-script text-xl text-rose mt-3">— {b.name}</p>
+                    <p className="font-script text-xl text-rose mt-3">​- {b.name}</p>
                   </motion.div>
                 ))}
               </AnimatePresence>

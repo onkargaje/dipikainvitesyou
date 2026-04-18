@@ -37,7 +37,7 @@ export const EventCards = () => {
                 }}
               >
                 {/* Dark gradient for legibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 opacity-0 py-0" />
 
                 <div className="relative z-10 text-center text-secondary-foreground w-full flex flex-col items-center justify-center">
                   <p className="uppercase tracking-[0.4em] opacity-90 text-secondary-foreground text-[0.65rem] md:text-sm">
