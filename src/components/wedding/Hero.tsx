@@ -71,7 +71,7 @@ export const Hero = () => {
           initial={reduced ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 2.1 }}
-          className="uppercase tracking-[0.5em] text-rose mt-8 text-base"
+          className="uppercase tracking-[0.5em] text-rose mt-8 text-xs"
         >
           Save the Date · {wedding.dateLabel}
         </motion.p>

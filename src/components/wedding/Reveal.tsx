@@ -56,7 +56,7 @@ export const SectionTitle = ({
     {eyebrow && (
       <p className="text-xs uppercase tracking-[0.4em] text-rose/80 mb-3">{eyebrow}</p>
     )}
-    <h2 className="font-serif text-4xl md:text-5xl text-foreground">{title}</h2>
+    <h2 className="font-serif md:text-5xl text-foreground text-sm">{title}</h2>
     <Ornament />
     {subtitle && (
       <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">{subtitle}</p>
