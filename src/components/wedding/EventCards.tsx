@@ -47,7 +47,7 @@ export const EventCards = () => {
                     {e.name}
                   </h3>
 
-                  <ul className="space-y-2.5 mx-0">
+                  <ul className="space-y-2.5 mx-0 py-0">
                     <Row icon={<Calendar className="h-4 w-4" />} value={e.date} />
                     <Row icon={<Clock className="h-4 w-4" />} value={e.time} />
                     <Row icon={<MapPin className="h-4 w-4" />} value={e.venue} />
@@ -68,6 +68,6 @@ export const EventCards = () => {
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3 py-0">
     <span className="mt-1 opacity-90 text-gold">{icon}</span>
-    <p className="font-serif text-base leading-snug my-0 text-center text-secondary-foreground opacity-100 shadow-none font-extrabold py-0 md:text-4xl">{value}</p>
+    <p className="font-serif text-base leading-snug my-0 text-secondary-foreground opacity-100 shadow-none font-extrabold py-0 md:text-8xl text-left">{value}</p>
   </li>
 );
