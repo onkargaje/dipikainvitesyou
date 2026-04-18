@@ -100,7 +100,7 @@ export const ScratchReveal = () => {
             {/* Scratch canvas */}
             <canvas
               ref={canvasRef}
-              className={`absolute inset-0 cursor-grab transition-opacity duration-700 ${revealed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+              className={`absolute inset-0 cursor-grab transition-opacity duration-700 text-sm ${revealed ? "opacity-0 pointer-events-none" : "opacity-100"}`}
               onPointerDown={(e) => {
                 drawing.current = true;
                 (e.target as HTMLCanvasElement).setPointerCapture(e.pointerId);
