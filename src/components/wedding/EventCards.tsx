@@ -15,7 +15,7 @@ const themeBg: Record<string, string> = {
 
 export const EventCards = () => {
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section className="py-16 md:py-24 px-4 md:px-6">
       <div className="container max-w-5xl">
         <Reveal>
           <SectionTitle
@@ -27,9 +27,9 @@ export const EventCards = () => {
 
         <div className="grid grid-cols-1 gap-6 md:gap-8">
           {events.map((e, i) => (
-            <Reveal key={e.key} delay={i * 0.1} className="opacity-100 border-destructive-foreground border-none shadow-none rounded py-0 border-0">
+            <Reveal key={e.key} delay={i * 0.1} className="opacity-100">
               <article
-                className="group relative w-full text-left rounded-3xl overflow-hidden border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[420px] md:min-h-[520px] flex flex-col items-center justify-start border-0 opacity-100 px-6 py-10 md:px-16 md:py-16"
+                className="group relative w-full text-left rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] min-h-[360px] md:min-h-[460px] flex flex-col items-center justify-center px-6 py-12 md:px-16 md:py-20"
                 style={{
                   backgroundImage: `url(${themeBg[e.theme]})`,
                   backgroundSize: "cover",
@@ -37,13 +37,13 @@ export const EventCards = () => {
                 }}
               >
                 {/* Dark gradient for legibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/70 opacity-0" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
-                <div className="relative z-10 text-center text-secondary-foreground bg-transparent flex-col w-full py-[350px] flex items-center justify-start">
-                  <p className="uppercase tracking-[0.4em] opacity-90 text-center text-secondary-foreground text-[0.7rem] md:text-sm">
+                <div className="relative z-10 text-center text-secondary-foreground w-full flex flex-col items-center justify-center">
+                  <p className="uppercase tracking-[0.4em] opacity-90 text-secondary-foreground text-[0.65rem] md:text-sm">
                     Function 0{i + 1}
                   </p>
-                  <h3 className="mt-2 mb-5 md:mb-6 drop-shadow-lg font-extrabold font-serif text-secondary-foreground md:text-6xl text-7xl">
+                  <h3 className="mt-2 mb-5 md:mb-6 drop-shadow-lg font-extrabold font-serif text-secondary-foreground text-4xl md:text-6xl">
                     {e.name}
                   </h3>
 
@@ -68,6 +68,6 @@ export const EventCards = () => {
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3 py-0">
     <span className="mt-1 opacity-90 text-gold">{icon}</span>
-    <p className="font-serif leading-snug font-extrabold md:text-2xl whitespace-pre-line text-left text-secondary-foreground text-2xl">{value}</p>
+    <p className="font-serif leading-snug font-extrabold text-base md:text-xl whitespace-pre-line text-left text-secondary-foreground">{value}</p>
   </li>
 );
