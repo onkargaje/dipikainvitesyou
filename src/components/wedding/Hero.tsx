@@ -11,7 +11,7 @@ export const Hero = () => {
           src={heroBg}
           alt=""
           aria-hidden="true"
-          className="h-full w-full object-contain opacity-90"
+          className="h-full w-full object-cover scale-125 opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-cream/20 via-blush/15 to-cream/50" />
       </div>
