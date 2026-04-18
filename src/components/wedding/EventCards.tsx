@@ -45,7 +45,7 @@ export const EventCards = () => {
                     <p className="uppercase tracking-[0.4em] text-rose/80 text-[0.65rem] md:text-sm">
                       Function 0{i + 1}
                     </p>
-                    <h3 className="mt-2 mb-5 md:mb-6 font-extrabold font-serif text-rose text-4xl md:text-6xl">
+                    <h3 className="mt-2 mb-5 md:mb-6 font-extrabold font-serif text-rose md:text-6xl text-lg">
                       {e.name}
                     </h3>
 
@@ -71,6 +71,6 @@ export const EventCards = () => {
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3 py-0">
     <span className="mt-1 text-gold-deep">{icon}</span>
-    <p className="font-serif leading-snug font-semibold text-base md:text-lg whitespace-pre-line text-left text-foreground">{value}</p>
+    <p className="font-serif leading-snug font-semibold md:text-lg whitespace-pre-line text-left text-foreground text-xs">{value}</p>
   </li>
 );
