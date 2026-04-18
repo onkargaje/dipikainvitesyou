@@ -37,17 +37,17 @@ export const EventCards = () => {
                 }}
               >
                 {/* Dark gradient for legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 opacity-25 my-[23px] text-center bg-destructive-foreground px-0 py-[90px]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 opacity-25 my-[23px] text-center bg-destructive-foreground py-[90px] px-[23px]" />
 
-                <div className="relative p-7 md:p-8 text-center border-none text-secondary-foreground opacity-100 border-secondary-foreground shadow-none bg-transparent gap-0 my-0 mx-0 flex-col px-[23px] pr-0 flex items-center justify-start py-[200px] text-9xl">
-                  <p className="uppercase tracking-[0.4em] opacity-80 text-center text-secondary-foreground mr-[45px] mb-0 my-0 py-0 mx-[23px] px-[40px] text-base">
+                <div className="relative p-7 md:p-8 text-center border-none text-secondary-foreground opacity-100 border-secondary-foreground shadow-none bg-transparent gap-0 mx-0 flex-col px-[23px] pr-0 flex items-center justify-start text-9xl py-[200px] my-0">
+                  <p className="uppercase tracking-[0.4em] opacity-80 text-center text-secondary-foreground mr-[45px] mb-0 my-0 py-0 mx-[23px] px-[40px] text-sm">
                     Function 0{i + 1}
                   </p>
                   <h3 className="text-4xl mb-5 drop-shadow-lg my-0 py-0 font-extrabold font-serif text-secondary-foreground bg-transparent md:text-7xl">
                     {e.name}
                   </h3>
 
-                  <ul className="space-y-2.5 mx-0">
+                  <ul className="space-y-2.5 mx-0 py-0">
                     <Row icon={<Calendar className="h-4 w-4" />} value={e.date} />
                     <Row icon={<Clock className="h-4 w-4" />} value={e.time} />
                     <Row icon={<MapPin className="h-4 w-4" />} value={e.venue} />
@@ -68,6 +68,6 @@ export const EventCards = () => {
 const Row = ({ icon, value }: { icon: React.ReactNode; value: string }) => (
   <li className="flex items-start gap-3 py-0">
     <span className="mt-1 opacity-90 text-gold">{icon}</span>
-    <p className="font-serif text-base leading-snug my-0 text-center text-secondary-foreground opacity-100 shadow-none font-extrabold py-0 md:text-4xl">{value}</p>
+    <p className="font-serif text-base leading-snug my-0 text-secondary-foreground opacity-100 shadow-none font-extrabold py-0 md:text-8xl text-left">{value}</p>
   </li>
 );

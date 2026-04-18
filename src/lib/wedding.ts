@@ -51,7 +51,7 @@ export const events = [
     date: "14 February 2026",
     time: "6:00 PM onwards",
     venue: "​Madhura Lawns, Harsool",
-    dress: "​Girls - Kathpadra Saree,\nBoys - Traditional Kurta",
+    dress: "Girls - Kathpadra Saree,\nBoys - Traditional Kurta",
     theme: "phere",
   },
 ] as const;
