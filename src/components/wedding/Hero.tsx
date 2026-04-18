@@ -17,15 +17,6 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl">
-        <motion.p
-          initial={reduced ? false : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 0.2 }}
-          className="uppercase tracking-[0.5em] text-rose mb-6 text-base"
-        >
-          Save the Date · {wedding.dateLabel}
-        </motion.p>
-
         <motion.h1
           initial={reduced ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,6 +66,15 @@ export const Hero = () => {
           <span className="text-[0.65rem] uppercase tracking-[0.4em]">Scroll</span>
           <span className="block h-10 w-px bg-gradient-to-b from-rose/60 to-transparent animate-pulse" />
         </motion.div>
+
+        <motion.p
+          initial={reduced ? false : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4, delay: 2.1 }}
+          className="uppercase tracking-[0.5em] text-rose mt-8 text-base"
+        >
+          Save the Date · {wedding.dateLabel}
+        </motion.p>
       </div>
     </section>
   );
