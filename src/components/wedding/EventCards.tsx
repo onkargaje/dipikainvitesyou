@@ -29,7 +29,7 @@ export const EventCards = () => {
           {events.map((e, i) => (
             <Reveal key={e.key} delay={i * 0.1} className="opacity-100 border-destructive-foreground border-none shadow-none rounded py-0 border-0">
               <article
-                className="group relative w-full text-left rounded-3xl overflow-hidden border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[460px] flex-col border-0 opacity-100 py-[200px] px-[234px] flex items-center justify-start"
+                className="group relative w-full text-left rounded-3xl overflow-hidden border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[420px] md:min-h-[460px] flex flex-col items-center justify-start border-0 opacity-100 px-6 py-12 md:px-[234px] md:py-[200px]"
                 style={{
                   backgroundImage: `url(${themeBg[e.theme]})`,
                   backgroundSize: "cover",
@@ -37,17 +37,17 @@ export const EventCards = () => {
                 }}
               >
                 {/* Dark gradient for legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 opacity-25 my-[23px] text-center bg-destructive-foreground py-[90px] px-[23px]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 opacity-25 bg-destructive-foreground" />
 
-                <div className="relative p-7 md:p-8 text-center border-none text-secondary-foreground opacity-100 border-secondary-foreground shadow-none bg-transparent gap-0 mx-0 flex-col px-[23px] pr-0 flex items-center justify-start text-9xl py-[200px] my-0">
-                  <p className="uppercase tracking-[0.4em] opacity-80 text-center text-secondary-foreground mr-[45px] mb-0 my-0 py-0 mx-[23px] px-[40px] text-sm">
+                <div className="relative text-center text-secondary-foreground bg-transparent flex flex-col items-center justify-start w-full px-2 py-6 md:px-[23px] md:py-[200px] md:text-9xl">
+                  <p className="uppercase tracking-[0.4em] opacity-80 text-center text-secondary-foreground text-[0.65rem] md:text-sm md:px-[40px]">
                     Function 0{i + 1}
                   </p>
-                  <h3 className="text-4xl mb-5 drop-shadow-lg my-0 py-0 font-extrabold font-serif text-secondary-foreground bg-transparent md:text-7xl">
+                  <h3 className="mb-4 md:mb-5 drop-shadow-lg font-extrabold font-serif text-secondary-foreground text-3xl md:text-7xl">
                     {e.name}
                   </h3>
 
-                  <ul className="space-y-2.5 mx-0 py-0">
+                  <ul className="space-y-2 md:space-y-2.5">
                     <Row icon={<Calendar className="h-4 w-4" />} value={e.date} />
                     <Row icon={<Clock className="h-4 w-4" />} value={e.time} />
                     <Row icon={<MapPin className="h-4 w-4" />} value={e.venue} />
