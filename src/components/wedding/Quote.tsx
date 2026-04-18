@@ -6,9 +6,9 @@ export const Quote = () => (
       <Reveal>
         <span className="font-serif text-8xl md:text-9xl text-gold/40 leading-none block">"</span>
         <p className="font-serif italic text-2xl md:text-4xl text-foreground leading-relaxed -mt-6">
-          And in her smile, I see something more beautiful than the stars.
+          We are tying the sacred bond of marriage
         </p>
-        <p className="mt-8 text-sm uppercase tracking-[0.4em] text-rose/70">— Beth Revis</p>
+        <p className="mt-8 uppercase tracking-[0.4em] text-rose/70 text-3xl font-sans font-medium">​॥ वयं विवाहबन्धने बद्धौ ॥</p>
       </Reveal>
     </div>
   </section>
