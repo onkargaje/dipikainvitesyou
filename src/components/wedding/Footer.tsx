@@ -1,7 +1,7 @@
 import { wedding } from "@/lib/wedding";
 
 export const Footer = () => (
-  <footer className="relative py-10 px-6 text-center">
+  <footer className="relative py-16 px-6 text-center">
     <div className="container max-w-2xl">
       <p className="font-script text-5xl text-rose mb-4">
         {wedding.groom} & {wedding.bride}

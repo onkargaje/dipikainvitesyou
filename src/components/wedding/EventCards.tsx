@@ -15,7 +15,7 @@ const themeBg: Record<string, string> = {
 
 export const EventCards = () => {
   return (
-    <section className="py-10 md:py-14 px-4 md:px-6">
+    <section className="py-16 md:py-24 px-4 md:px-6">
       <div className="container max-w-5xl">
         <Reveal>
           <SectionTitle
