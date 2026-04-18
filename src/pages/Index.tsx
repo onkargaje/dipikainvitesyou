@@ -25,7 +25,7 @@ const Index = () => {
 
         <PhotoBlock
           variant="center"
-          image="/f5a5dbd7-8d9f-4f8d-97ea-852366325ed0.jpg"
+          image="/81b2cc16-6992-43d1-bffc-42fa91917b2f.jpg"
           title="Our Beginning"
         />
 
