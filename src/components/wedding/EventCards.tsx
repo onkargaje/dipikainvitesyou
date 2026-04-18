@@ -40,22 +40,24 @@ export const EventCards = () => {
                 {/* Dark gradient for legibility */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 opacity-0 py-0 px-0" />
 
-                <div className="relative z-10 text-center text-secondary-foreground w-full flex flex-col items-center justify-center">
-                  <p className="uppercase tracking-[0.4em] opacity-90 text-secondary-foreground text-[0.65rem] md:text-sm">
-                    Function 0{i + 1}
-                  </p>
-                  <h3 className="mt-2 mb-5 md:mb-6 drop-shadow-lg font-extrabold font-serif text-secondary-foreground text-4xl md:text-6xl">
-                    {e.name}
-                  </h3>
+                <div className="relative z-10 text-center w-full flex flex-col items-center justify-center">
+                  <div className="bg-cream/85 backdrop-blur-sm rounded-2xl px-5 py-6 md:px-8 md:py-8 shadow-[0_8px_24px_-8px_hsl(var(--gold)/0.4)] max-w-sm">
+                    <p className="uppercase tracking-[0.4em] text-rose/80 text-[0.65rem] md:text-sm">
+                      Function 0{i + 1}
+                    </p>
+                    <h3 className="mt-2 mb-5 md:mb-6 font-extrabold font-serif text-rose text-4xl md:text-6xl">
+                      {e.name}
+                    </h3>
 
-                  <ul className="space-y-2 md:space-y-2.5 inline-block text-left">
-                    <Row icon={<Calendar className="h-4 w-4" />} value={e.date} />
-                    <Row icon={<Clock className="h-4 w-4" />} value={e.time} />
-                    <Row icon={<MapPin className="h-4 w-4" />} value={e.venue} />
-                    {e.dress && e.dress.trim() && (
-                      <Row icon={<Shirt className="h-4 w-4" />} value={e.dress} />
-                    )}
-                  </ul>
+                    <ul className="space-y-2 md:space-y-2.5 inline-block text-left">
+                      <Row icon={<Calendar className="h-4 w-4" />} value={e.date} />
+                      <Row icon={<Clock className="h-4 w-4" />} value={e.time} />
+                      <Row icon={<MapPin className="h-4 w-4" />} value={e.venue} />
+                      {e.dress && e.dress.trim() && (
+                        <Row icon={<Shirt className="h-4 w-4" />} value={e.dress} />
+                      )}
+                    </ul>
+                  </div>
                 </div>
               </article>
             </Reveal>
