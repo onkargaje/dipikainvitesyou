@@ -39,7 +39,7 @@ export const EventCards = () => {
                 {/* Dark gradient for legibility */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/70" />
 
-                <div className="relative z-10 text-center text-secondary-foreground bg-transparent flex flex-col items-center justify-start w-full">
+                <div className="relative z-10 text-center text-secondary-foreground bg-transparent flex-col w-full flex items-center justify-start py-[350px]">
                   <p className="uppercase tracking-[0.4em] opacity-90 text-center text-secondary-foreground text-[0.7rem] md:text-sm">
                     Function 0{i + 1}
                   </p>
