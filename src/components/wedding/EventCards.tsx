@@ -25,11 +25,11 @@ export const EventCards = () => {
           />
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:gap-8">
           {events.map((e, i) => (
             <Reveal key={e.key} delay={i * 0.1} className="opacity-100 border-destructive-foreground border-none shadow-none rounded py-0 border-0">
               <article
-                className="group relative w-full text-left rounded-3xl overflow-hidden border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[420px] md:min-h-[460px] flex flex-col items-center justify-start border-0 opacity-100 px-6 py-12 md:px-[234px] md:py-[200px]"
+                className="group relative w-full text-left rounded-3xl overflow-hidden border-gold/40 shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] hover:border-gold/70 min-h-[420px] md:min-h-[520px] flex flex-col items-center justify-start border-0 opacity-100 px-6 py-10 md:px-16 md:py-16"
                 style={{
                   backgroundImage: `url(${themeBg[e.theme]})`,
                   backgroundSize: "cover",
@@ -37,17 +37,17 @@ export const EventCards = () => {
                 }}
               >
                 {/* Dark gradient for legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20 opacity-25 bg-destructive-foreground" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/70" />
 
-                <div className="relative text-center text-secondary-foreground bg-transparent flex flex-col items-center justify-start w-full px-2 py-6 md:px-[23px] md:py-[200px] md:text-9xl">
-                  <p className="uppercase tracking-[0.4em] opacity-80 text-center text-secondary-foreground text-[0.65rem] md:text-sm md:px-[40px]">
+                <div className="relative z-10 text-center text-secondary-foreground bg-transparent flex flex-col items-center justify-start w-full">
+                  <p className="uppercase tracking-[0.4em] opacity-90 text-center text-secondary-foreground text-[0.7rem] md:text-sm">
                     Function 0{i + 1}
                   </p>
-                  <h3 className="mb-4 md:mb-5 drop-shadow-lg font-extrabold font-serif text-secondary-foreground text-3xl md:text-7xl">
+                  <h3 className="mt-2 mb-5 md:mb-6 drop-shadow-lg font-extrabold font-serif text-secondary-foreground text-3xl md:text-6xl">
                     {e.name}
                   </h3>
 
-                  <ul className="space-y-2 md:space-y-2.5">
+                  <ul className="space-y-2 md:space-y-2.5 inline-block text-left">
                     <Row icon={<Calendar className="h-4 w-4" />} value={e.date} />
                     <Row icon={<Clock className="h-4 w-4" />} value={e.time} />
                     <Row icon={<MapPin className="h-4 w-4" />} value={e.venue} />
