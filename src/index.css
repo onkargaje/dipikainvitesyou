@@ -201,6 +201,37 @@
 
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { scrollbar-width: none; }
+
+  /* Slow Ken-Burns zoom for hero background */
+  @keyframes ken-burns {
+    0%   { transform: scale(1.0); transform-origin: center center; }
+    50%  { transform: scale(1.15); transform-origin: 55% 45%; }
+    100% { transform: scale(1.0); transform-origin: center center; }
+  }
+  .animate-ken-burns { animation: ken-burns 24s var(--ease-silk) infinite; }
+
+  /* Gentle slow zoom-in for single feature photos */
+  @keyframes slow-zoom {
+    0%   { transform: scale(1.0); }
+    100% { transform: scale(1.08); }
+  }
+  .animate-slow-zoom { animation: slow-zoom 7s var(--ease-silk) infinite alternate; }
+
+  /* Floating animation for event cards */
+  @keyframes float-card {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+  .animate-float { animation: float-card 6s ease-in-out infinite; }
+  .animate-float-delay-1 { animation: float-card 6s ease-in-out infinite; animation-delay: 1s; }
+  .animate-float-delay-2 { animation: float-card 6s ease-in-out infinite; animation-delay: 2s; }
+  .animate-float-delay-3 { animation: float-card 6s ease-in-out infinite; animation-delay: 3s; }
+
+  /* Embla fade transition */
+  .embla-fade .embla__container { transform: none !important; }
+  .embla-fade .embla__slide {
+    transition: opacity 0.9s var(--ease-silk);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
