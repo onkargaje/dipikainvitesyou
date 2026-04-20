@@ -57,6 +57,7 @@ const Index = () => {
           interval={3000}
           effect="fade"
           aspect="aspect-square"
+          showDots
         />
 
         <Quote />
