@@ -35,10 +35,15 @@ const twoSoulImages = [twoSoul1, twoSoul2, twoSoul3, twoSoul4, twoSoul5, twoSoul
 const laughterImages = [laughter2, laughter3, laughter4, laughter5, laughter6, laughter7, laughter8, laughter9];
 
 const Index = () => {
+  const [introDone, setIntroDone] = useState(false);
+
   return (
     <main className="relative overflow-x-hidden">
+      <CinematicIntro onEnter={() => setIntroDone(true)} />
+      <MusicPlayer active={introDone} />
+
       <FloatingOrbs />
-      <PetalField density={20} />
+      <PetalField density={22} />
 
       <div className="relative z-10">
         <Hero />
