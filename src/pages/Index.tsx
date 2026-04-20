@@ -1,5 +1,6 @@
 import { Hero } from "@/components/wedding/Hero";
 import { PhotoBlock } from "@/components/wedding/PhotoBlock";
+import { PhotoSlider } from "@/components/wedding/PhotoSlider";
 import { Countdown } from "@/components/wedding/Countdown";
 import { Quote } from "@/components/wedding/Quote";
 import { EventCards } from "@/components/wedding/EventCards";
@@ -9,10 +10,18 @@ import { ScratchReveal } from "@/components/wedding/ScratchReveal";
 import { MapSection } from "@/components/wedding/MapSection";
 import { Footer } from "@/components/wedding/Footer";
 import { PetalField, FloatingOrbs } from "@/components/wedding/PetalField";
-import photo1 from "@/assets/photo-1.jpg";
-import photo2 from "@/assets/photo-2.jpg";
-import photo3 from "@/assets/photo-3.jpg";
-import photo4 from "@/assets/photo-4.jpg";
+import ourBeginning from "@/assets/our-beginning.jpg";
+import foreverBegins from "@/assets/forever-begins.jpg";
+import twoSoul1 from "@/assets/two-soul-1.jpg";
+import twoSoul2 from "@/assets/two-soul-2.jpg";
+import twoSoul3 from "@/assets/two-soul-3.jpg";
+import twoSoul4 from "@/assets/two-soul-4.jpg";
+import twoSoul5 from "@/assets/two-soul-5.jpg";
+import twoSoul6 from "@/assets/two-soul-6.jpg";
+import twoSoul7 from "@/assets/two-soul-7.jpg";
+
+const twoSoulImages = [twoSoul1, twoSoul3, twoSoul7];
+const laughterImages = [twoSoul2, twoSoul4, twoSoul5, twoSoul6, twoSoul1, twoSoul3, twoSoul7];
 
 const Index = () => {
   return (
@@ -25,35 +34,43 @@ const Index = () => {
 
         <PhotoBlock
           variant="center"
-          image="/a01b4a22-35f1-4b22-85bc-7563b8752928.jpg"
+          image={ourBeginning}
           title="Our Beginning"
         />
 
         <Countdown />
 
-        <PhotoBlock
+        <PhotoSlider
           variant="left"
-          image={photo2}
+          images={twoSoulImages}
           title="Two Souls, One Story"
           text="From quiet conversations to whispered promises — every moment led us here. To this season, this love, this forever."
           rotate={-2}
+          interval={3000}
+          effect="fade"
+          aspect="aspect-square"
         />
 
         <Quote />
 
-        <PhotoBlock
+        <PhotoSlider
           variant="right"
-          image={photo3}
+          images={laughterImages}
           title="​A Little Laughter"
           text="Because love is grand, but laughter is the music it dances to. Here's to a lifetime of inside jokes and stolen smiles."
           rotate={2}
+          interval={2200}
+          effect="slide"
+          aspect="aspect-square"
+          showDots
+          bright
         />
 
         <EventCards />
 
         <PhotoBlock
           variant="feature"
-          image={photo4}
+          image={foreverBegins}
           caption="Forever begins here"
         />
 
