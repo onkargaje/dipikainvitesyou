@@ -12,7 +12,7 @@ interface Blessing {
 const seed: Blessing[] = [
   { id: 1, name: "Kshitij", message: "Wishing you a lifetime of love, laughter, and beautiful memories. ✨" },
   { id: 2, name: "Mom & Dad", message: "May your love story be a beautiful one. Cheers to forever!" },
-  { id: 3, name: "Shivani", message: "Bless you both with happiness, health, and togetherness always." },
+  { id: 3, name: "Shivani", message: "​\"From sitting by your side in the office to standing by you as your bridesmaid — what a beautiful journey to witness. Wishing you both a lifetime of love, laughter, and happiness. Congratulations Cuties❤️🧿\"" },
   { id: 4, name: "Onkar", message: "Two hearts, one soul — congratulations on your beautiful journey." },
 ];
 

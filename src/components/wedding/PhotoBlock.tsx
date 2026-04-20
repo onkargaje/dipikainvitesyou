@@ -84,10 +84,10 @@ export const PhotoBlock = ({
           <Reveal delay={0.15}>
             <div className={reverse ? "md:text-right" : ""}>
               {title && (
-                <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-4">{title}</h3>
+                <h3 className="font-serif md:text-4xl text-foreground mb-4 text-lg text-center">{title}</h3>
               )}
               {text && (
-                <p className="text-muted-foreground leading-relaxed text-lg">{text}</p>
+                <p className="text-muted-foreground leading-relaxed text-xs">{text}</p>
               )}
             </div>
           </Reveal>

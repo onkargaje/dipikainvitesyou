@@ -9,7 +9,7 @@ export const MapSection = () => (
         <SectionTitle
           eyebrow="Find Your Way"
           title="The Venue"
-          subtitle={wedding.venueShort}
+          subtitle={wedding.venueFull}
         />
       </Reveal>
 

@@ -21,7 +21,7 @@ export const EventCards = () => {
           <SectionTitle
             eyebrow="Wedding Functions"
             title="The Celebrations"
-            subtitle="Four magical evenings, woven together with love, laughter, and tradition."
+            subtitle="Four magical events, woven together with love, laughter and tradition."
           />
         </Reveal>
 
@@ -45,7 +45,7 @@ export const EventCards = () => {
                     <p className="uppercase tracking-[0.4em] text-rose/80 text-[0.65rem] md:text-sm">
                       Function 0{i + 1}
                     </p>
-                    <h3 className="mt-2 mb-5 md:mb-6 font-extrabold font-serif text-rose md:text-6xl text-lg">
+                    <h3 className="mt-2 mb-5 md:mb-6 font-extrabold font-serif text-rose md:text-6xl text-3xl">
                       {e.name}
                     </h3>
 
