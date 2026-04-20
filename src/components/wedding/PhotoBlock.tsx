@@ -107,7 +107,7 @@ export const PhotoBlock = ({
               src={image}
               alt={title || caption || ""}
               loading="lazy"
-              className="w-full aspect-[4/5] object-contain text-sm rounded py-0 border-none shadow-none opacity-100 mx-0 px-0 border-8"
+              className="w-full aspect-[4/5] object-contain text-sm rounded py-0 border-none shadow-none opacity-100 mx-0 px-0 border-8 animate-slow-zoom"
             />
             {title && (
               <div className="absolute inset-3 bottom-12 flex items-end justify-center pointer-events-none">
