@@ -10,48 +10,57 @@ interface Petal {
   opacity: number;
   drift: number;
   hue: number;
+  rotateSpeed: number;
 }
 
-const PetalShape = ({ size, hue }: { size: number; hue: number }) => (
-  <svg viewBox="0 0 32 32" width={size} height={size} aria-hidden="true">
+const PetalShape = ({ size, hue, glow = false }: { size: number; hue: number; glow?: boolean }) => (
+  <svg
+    viewBox="0 0 32 32"
+    width={size}
+    height={size}
+    aria-hidden="true"
+    style={
+      glow
+        ? { filter: `drop-shadow(0 2px 4px hsl(${hue} 50% 60% / 0.35))` }
+        : undefined
+    }
+  >
     <defs>
-      <radialGradient id={`pg-${hue}`} cx="50%" cy="40%" r="60%">
-        <stop offset="0%" stopColor={`hsl(${hue}, 70%, 92%)`} />
-        <stop offset="60%" stopColor={`hsl(${hue}, 60%, 82%)`} />
+      <radialGradient id={`pg-${hue}-${size.toFixed(0)}-${glow ? "g" : "n"}`} cx="50%" cy="40%" r="60%">
+        <stop offset="0%" stopColor={`hsl(${hue}, 80%, 95%)`} />
+        <stop offset="60%" stopColor={`hsl(${hue}, 65%, 84%)`} />
         <stop offset="100%" stopColor={`hsl(${hue}, 55%, 72%)`} />
       </radialGradient>
     </defs>
     <path
       d="M16 2 C22 6 28 12 26 22 C24 28 18 30 16 30 C14 30 8 28 6 22 C4 12 10 6 16 2 Z"
-      fill={`url(#pg-${hue})`}
+      fill={`url(#pg-${hue}-${size.toFixed(0)}-${glow ? "g" : "n"})`}
     />
   </svg>
 );
 
-export const PetalField = ({ density = 18 }: { density?: number }) => {
-  const [count, setCount] = useState(density);
+interface FieldProps {
+  count: number;
+  layer: "bg" | "fg";
+}
 
-  useEffect(() => {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) setCount(0);
-    else if (isMobile) setCount(Math.floor(density / 2.2));
-  }, [density]);
-
+const Field = ({ count, layer }: FieldProps) => {
+  const isBg = layer === "bg";
   const petals = useMemo<Petal[]>(
     () =>
       Array.from({ length: count }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
-        delay: Math.random() * 12,
-        duration: 14 + Math.random() * 14,
-        size: 14 + Math.random() * 22,
-        blur: Math.random() < 0.4 ? Math.random() * 2 : 0,
-        opacity: 0.4 + Math.random() * 0.5,
-        drift: 40 + Math.random() * 120,
+        delay: Math.random() * 14,
+        duration: isBg ? 26 + Math.random() * 18 : 12 + Math.random() * 14,
+        size: isBg ? 26 + Math.random() * 30 : 10 + Math.random() * 18,
+        blur: isBg ? 2 + Math.random() * 3 : Math.random() < 0.25 ? Math.random() * 1.2 : 0,
+        opacity: isBg ? 0.2 + Math.random() * 0.2 : 0.55 + Math.random() * 0.3,
+        drift: (Math.random() < 0.5 ? -1 : 1) * (40 + Math.random() * 140),
         hue: [350, 345, 355, 12, 340][Math.floor(Math.random() * 5)],
+        rotateSpeed: 360 + Math.random() * 540,
       })),
-    [count]
+    [count, isBg]
   );
 
   if (count === 0) return null;
@@ -59,16 +68,10 @@ export const PetalField = ({ density = 18 }: { density?: number }) => {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-[1] overflow-hidden"
+      className={`pointer-events-none fixed inset-0 overflow-hidden ${
+        isBg ? "z-[1]" : "z-[60]"
+      }`}
     >
-      <style>{`
-        @keyframes petal-fall {
-          0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
-          10% { opacity: var(--op, 0.7); }
-          90% { opacity: var(--op, 0.7); }
-          100% { transform: translate3d(var(--drift, 60px), 110vh, 0) rotate(540deg); opacity: 0; }
-        }
-      `}</style>
       {petals.map((p) => (
         <div
           key={p.id}
@@ -81,13 +84,42 @@ export const PetalField = ({ density = 18 }: { density?: number }) => {
             // @ts-expect-error css var
             "--drift": `${p.drift}px`,
             "--op": p.opacity,
+            "--rot": `${p.rotateSpeed}deg`,
             willChange: "transform, opacity",
           }}
         >
-          <PetalShape size={p.size} hue={p.hue} />
+          <PetalShape size={p.size} hue={p.hue} glow={!isBg} />
         </div>
       ))}
     </div>
+  );
+};
+
+export const PetalField = ({ density = 18 }: { density?: number }) => {
+  const [counts, setCounts] = useState({ bg: Math.round(density * 0.6), fg: density });
+
+  useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) setCounts({ bg: 0, fg: 0 });
+    else if (isMobile)
+      setCounts({ bg: Math.floor(density * 0.35), fg: Math.floor(density / 2) });
+  }, [density]);
+
+  return (
+    <>
+      <style>{`
+        @keyframes petal-fall {
+          0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+          8% { opacity: var(--op, 0.7); }
+          50% { opacity: var(--op, 0.7); }
+          80% { opacity: calc(var(--op, 0.7) * 0.7); }
+          100% { transform: translate3d(var(--drift, 60px), 110vh, 0) rotate(var(--rot, 540deg)); opacity: 0; }
+        }
+      `}</style>
+      <Field count={counts.bg} layer="bg" />
+      <Field count={counts.fg} layer="fg" />
+    </>
   );
 };
 
