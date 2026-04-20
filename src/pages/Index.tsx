@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { Hero } from "@/components/wedding/Hero";
+import { CinematicIntro } from "@/components/wedding/CinematicIntro";
+import { MusicPlayer } from "@/components/wedding/MusicPlayer";
 import { PhotoBlock } from "@/components/wedding/PhotoBlock";
 import { PhotoSlider } from "@/components/wedding/PhotoSlider";
 import { Countdown } from "@/components/wedding/Countdown";
