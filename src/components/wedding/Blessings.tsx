@@ -14,6 +14,7 @@ const seed: Blessing[] = [
   { id: 2, name: "Mom & Dad", message: "May your love story be a beautiful one. Cheers to forever!" },
   { id: 3, name: "Shivani", message: "​\"From sitting by your side in the office to standing by you as your bridesmaid — what a beautiful journey to witness. Wishing you both a lifetime of love, laughter, and happiness. Congratulations Cuties❤️🧿\"" },
   { id: 4, name: "Onkar", message: "Two hearts, one soul — congratulations on your beautiful journey." },
+  { id: 5, name: "Manisha", message: "I'm so happy to see you starting this new chapter. Just don't forget me now that you're becoming a \"responsible married woman\" (I'll still expect the same drama, okay? 😄)\n\nLove you always 💕" },
 ];
 
 export const Blessings = () => {
