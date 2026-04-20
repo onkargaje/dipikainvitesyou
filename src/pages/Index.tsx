@@ -44,7 +44,7 @@ const Index = () => {
         <PhotoBlock
           variant="right"
           image={photo3}
-          title="A Little Laughter"
+          title="​A Little Laughter"
           text="Because love is grand, but laughter is the music it dances to. Here's to a lifetime of inside jokes and stolen smiles."
           rotate={2}
         />
