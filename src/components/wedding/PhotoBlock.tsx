@@ -19,18 +19,19 @@ export const PhotoBlock = ({
 }: PhotoBlockProps) => {
   if (variant === "feature") {
     return (
-      <section className="py-24 md:py-32 px-6">
+      <section className="py-28 md:py-36 px-6">
         <div className="container max-w-3xl">
           <Reveal>
             <div
-              className="polaroid mx-auto max-w-2xl"
+              className="polaroid mx-auto max-w-2xl glow-rose"
               style={{ transform: `rotate(${rotate}deg)` }}
             >
               <img
                 src={image}
                 alt={caption || title || ""}
                 loading="lazy"
-                className="w-full aspect-[4/5] object-cover rounded-sm"
+                className="w-full h-auto object-contain rounded-sm bg-cream animate-slow-zoom"
+                style={{ filter: "brightness(1.05) saturate(1.02) contrast(0.98)" }}
               />
               {caption && (
                 <p className="absolute bottom-3 left-0 right-0 text-center font-script text-2xl text-rose">
