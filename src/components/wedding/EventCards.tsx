@@ -63,7 +63,8 @@ export const EventCards = () => {
                 </div>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
