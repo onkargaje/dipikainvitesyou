@@ -232,6 +232,12 @@
   .embla-fade .embla__slide {
     transition: opacity 0.9s var(--ease-silk);
   }
+
+  @keyframes pulse-soft {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--rose-dust) / 0.5); }
+    50%      { box-shadow: 0 0 0 12px hsl(var(--rose-dust) / 0); }
+  }
+  .animate-pulse-soft { animation: pulse-soft 2.4s ease-in-out infinite; }
 }
 
 @media (prefers-reduced-motion: reduce) {
