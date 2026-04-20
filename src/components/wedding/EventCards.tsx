@@ -26,10 +26,12 @@ export const EventCards = () => {
         </Reveal>
 
         <div className="grid grid-cols-1 gap-6 md:gap-8">
-          {events.map((e, i) => (
+          {events.map((e, i) => {
+            const floatClass = ["animate-float", "animate-float-delay-1", "animate-float-delay-2", "animate-float-delay-3"][i % 4];
+            return (
             <Reveal key={e.key} delay={i * 0.1} className="opacity-100">
               <article
-                className={`group relative w-full text-left rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] aspect-[3/4] max-w-md mx-auto w-full flex flex-col items-center justify-start px-6 py-12 md:px-16 md:py-20 bg-cream animate-float-delay-${i % 4}`}
+                className={`group relative w-full text-left rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] aspect-[3/4] max-w-md mx-auto w-full flex flex-col items-center justify-start px-6 py-12 md:px-16 md:py-20 bg-cream ${floatClass}`}
                 style={{
                   backgroundImage: `url(${themeBg[e.theme]})`,
                   backgroundSize: "contain",
