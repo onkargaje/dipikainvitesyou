@@ -61,7 +61,7 @@ export const Countdown = () => {
                 The Celebration Begins
               </p>
             )}
-            <p className="mt-8 text-muted-foreground tracking-widest uppercase text-xs">
+            <p className="mt-8 text-muted-foreground tracking-widest uppercase text-[0.6rem] whitespace-nowrap overflow-hidden text-ellipsis">
               {wedding.dateLabel} · {wedding.venueShort}
             </p>
           </div>
