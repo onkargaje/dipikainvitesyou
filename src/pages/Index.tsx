@@ -13,15 +13,19 @@ import { PetalField, FloatingOrbs } from "@/components/wedding/PetalField";
 import ourBeginning from "@/assets/our-beginning.jpg";
 import foreverBegins from "@/assets/forever-begins.jpg";
 import twoSoul1 from "@/assets/two-soul-1.jpg";
-import twoSoul2 from "@/assets/two-soul-2.jpg";
 import twoSoul3 from "@/assets/two-soul-3.jpg";
-import twoSoul4 from "@/assets/two-soul-4.jpg";
-import twoSoul5 from "@/assets/two-soul-5.jpg";
-import twoSoul6 from "@/assets/two-soul-6.jpg";
 import twoSoul7 from "@/assets/two-soul-7.jpg";
+import laughter2 from "@/assets/laughter-2.jpg";
+import laughter3 from "@/assets/laughter-3.jpg";
+import laughter4 from "@/assets/laughter-4.jpg";
+import laughter5 from "@/assets/laughter-5.jpg";
+import laughter6 from "@/assets/laughter-6.jpg";
+import laughter7 from "@/assets/laughter-7.jpg";
+import laughter8 from "@/assets/laughter-8.jpg";
+import laughter9 from "@/assets/laughter-9.jpg";
 
 const twoSoulImages = [twoSoul1, twoSoul3, twoSoul7];
-const laughterImages = [twoSoul2, twoSoul4, twoSoul5, twoSoul6, twoSoul1, twoSoul3, twoSoul7];
+const laughterImages = [laughter2, laughter3, laughter4, laughter5, laughter6, laughter7, laughter8, laughter9];
 
 const Index = () => {
   return (
