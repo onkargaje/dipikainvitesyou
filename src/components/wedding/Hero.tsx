@@ -11,7 +11,7 @@ export const Hero = () => {
           src={heroBg}
           alt=""
           aria-hidden="true"
-          className="h-full w-full object-cover scale-100 opacity-90"
+          className="h-full w-full object-cover opacity-90 animate-ken-burns"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-cream/30 via-blush/20 to-cream/60" />
       </div>
