@@ -3,7 +3,7 @@ import { wedding } from "@/lib/wedding";
 import { MapPin, ExternalLink } from "lucide-react";
 
 export const MapSection = () => (
-  <section className="py-24 md:py-32 px-6">
+  <section className="py-14 md:py-20 px-6">
     <div className="container max-w-4xl">
       <Reveal>
         <SectionTitle

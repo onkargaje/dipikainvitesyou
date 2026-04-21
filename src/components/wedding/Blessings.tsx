@@ -1,39 +1,77 @@
-import { useState, FormEvent } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { z } from "zod";
 import { Reveal, SectionTitle } from "./Reveal";
 import { Heart, Send, Sparkles } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 interface Blessing {
-  id: number;
+  id: string;
   name: string;
   message: string;
 }
 
 const seed: Blessing[] = [
-  { id: 1, name: "Kshitij", message: "Wishing you a lifetime of love, laughter, and beautiful memories. ✨" },
-  { id: 2, name: "Mom & Dad", message: "May your love story be a beautiful one. Cheers to forever!" },
-  { id: 3, name: "Shivani", message: "​\"From sitting by your side in the office to standing by you as your bridesmaid — what a beautiful journey to witness. Wishing you both a lifetime of love, laughter, and happiness. Congratulations Cuties❤️🧿\"" },
-  { id: 4, name: "Onkar", message: "Two hearts, one soul — congratulations on your beautiful journey." },
-  { id: 5, name: "Manisha", message: "I'm so happy to see you starting this new chapter. Just don't forget me now that you're becoming a \"responsible married woman\" (I'll still expect the same drama, okay? 😄)\n\nLove you always 💕" },
+  { id: "s1", name: "Kshitij", message: "Wishing you a lifetime of love, laughter, and beautiful memories. ✨" },
+  { id: "s2", name: "Mom & Dad", message: "May your love story be a beautiful one. Cheers to forever!" },
+  { id: "s3", name: "Shivani", message: "\"From sitting by your side in the office to standing by you as your bridesmaid — what a beautiful journey to witness. Wishing you both a lifetime of love, laughter, and happiness. Congratulations Cuties❤️🧿\"" },
+  { id: "s4", name: "Onkar", message: "Two hearts, one soul — congratulations on your beautiful journey." },
+  { id: "s5", name: "Manisha", message: "I'm so happy to see you starting this new chapter. Just don't forget me now that you're becoming a \"responsible married woman\" (I'll still expect the same drama, okay? 😄)\n\nLove you always 💕" },
 ];
+
+const schema = z.object({
+  name: z.string().trim().min(1, "Please enter your name").max(80, "Name too long"),
+  message: z.string().trim().min(1, "Please write a message").max(1000, "Message too long"),
+});
 
 export const Blessings = () => {
   const [list, setList] = useState<Blessing[]>(seed);
   const [name, setName] = useState("");
   const [msg, setMsg] = useState("");
   const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const submit = (e: FormEvent) => {
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const { data, error } = await supabase
+        .from("blessings")
+        .select("id, name, message")
+        .order("created_at", { ascending: false })
+        .limit(50);
+      if (cancelled || error || !data) return;
+      setList((prev) => [...data, ...prev.filter((p) => p.id.startsWith("s"))]);
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
+  const submit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !msg.trim()) return;
-    setList((l) => [{ id: Date.now(), name: name.trim(), message: msg.trim() }, ...l]);
+    const parsed = schema.safeParse({ name, message: msg });
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0].message);
+      return;
+    }
+    setSubmitting(true);
+    const { data, error } = await supabase
+      .from("blessings")
+      .insert({ name: parsed.data.name, message: parsed.data.message })
+      .select("id, name, message")
+      .single();
+    setSubmitting(false);
+    if (error || !data) {
+      toast.error("Could not send blessing. Please try again.");
+      return;
+    }
+    setList((l) => [data as Blessing, ...l]);
     setName(""); setMsg("");
     setSuccess(true);
     setTimeout(() => setSuccess(false), 2400);
   };
 
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section className="py-16 md:py-24 px-6">
       <div className="container max-w-5xl">
         <Reveal>
           <SectionTitle
@@ -51,6 +89,7 @@ export const Blessings = () => {
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  maxLength={80}
                   className="w-full bg-background/60 border border-border focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 rounded-xl px-4 py-3 font-serif text-lg"
                   placeholder="Enter your name"
                 />
@@ -61,16 +100,18 @@ export const Blessings = () => {
                   value={msg}
                   onChange={(e) => setMsg(e.target.value)}
                   rows={5}
+                  maxLength={1000}
                   className="w-full bg-background/60 border border-border focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 rounded-xl px-4 py-3 resize-none"
                   placeholder="Write your blessings..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full bg-gradient-to-r from-rose to-rose/90 text-primary-foreground hover:shadow-[0_0_30px_hsl(var(--gold)/0.5)] transition-all duration-500 group"
+                disabled={submitting}
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full bg-gradient-to-r from-rose to-rose/90 text-primary-foreground hover:shadow-[0_0_30px_hsl(var(--gold)/0.5)] transition-all duration-500 group disabled:opacity-60"
               >
                 <Send className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                Send Blessing
+                {submitting ? "Sending..." : "Send Blessing"}
               </button>
 
               <AnimatePresence>

@@ -21,7 +21,7 @@ export const Gifts = () => {
   )}&pn=${encodeURIComponent(wedding.groom + " " + wedding.bride)}`;
 
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section className="py-14 md:py-20 px-6">
       <div className="container max-w-5xl">
         <Reveal>
           <SectionTitle

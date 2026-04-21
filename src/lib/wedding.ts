@@ -49,10 +49,19 @@ export const events = [
   {
     key: "phere",
     name: "Phere",
-    date: "14 February 2026",
-    time: "6:00 PM onwards",
+    date: "3 May 2026",
+    time: "11:00 AM onwards",
     venue: "​Madhura Lawns, Harsul",
-    dress: "Girls - Kathpadra Saree,\nBoys - Traditional Kurta",
+    dress: "Traditional\nGirls: Kathpadra Saree\nBoys: Traditional Kurta",
     theme: "phere",
+  },
+  {
+    key: "varmala",
+    name: "Varmala",
+    date: "3 May 2026",
+    time: "6:50 PM onwards",
+    venue: "​Madhura Lawns, Harsul",
+    dress: "Which Suits You",
+    theme: "varmala",
   },
 ] as const;

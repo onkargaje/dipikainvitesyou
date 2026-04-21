@@ -28,11 +28,11 @@ export const PhotoSlider = ({
   images,
   title,
   text,
-  interval = 3500,
+  interval = 5500,
   effect = "slide",
   showDots = false,
   aspect = "aspect-[4/5]",
-  zoom = true,
+  zoom = false,
   bright = false,
   variant = "center",
   rotate = 0,
@@ -61,7 +61,7 @@ export const PhotoSlider = ({
 
   const Frame = (
     <div
-      className="polaroid mx-auto max-w-md md:max-w-lg"
+      className="polaroid mx-auto max-w-lg md:max-w-xl"
       style={{ transform: `rotate(${rotate}deg)` }}
     >
       <div
@@ -123,7 +123,7 @@ export const PhotoSlider = ({
   if (variant === "left" || variant === "right") {
     const reverse = variant === "right";
     return (
-      <section className="py-20 md:py-28 px-6">
+      <section className="py-12 md:py-20 px-6">
         <div
           className={`container max-w-5xl grid md:grid-cols-2 gap-10 md:gap-16 items-center ${
             reverse ? "md:[&>*:first-child]:order-2" : ""
@@ -148,7 +148,7 @@ export const PhotoSlider = ({
   }
 
   return (
-    <section className="py-20 md:py-28 px-6">
+    <section className="py-12 md:py-20 px-6">
       <div className="container max-w-3xl">
         <Reveal>{Frame}</Reveal>
         {title && (

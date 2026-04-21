@@ -19,7 +19,7 @@ export const PhotoBlock = ({
 }: PhotoBlockProps) => {
   if (variant === "feature") {
     return (
-      <section className="py-28 md:py-36 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="container max-w-3xl">
           <Reveal>
             <div
@@ -30,8 +30,8 @@ export const PhotoBlock = ({
                 src={image}
                 alt={caption || title || ""}
                 loading="lazy"
-                className="w-full h-auto object-contain rounded-sm bg-cream animate-slow-zoom"
-                style={{ filter: "brightness(1.05) saturate(1.02) contrast(0.98)" }}
+              className="w-full h-auto object-contain rounded-sm bg-cream"
+              style={{ filter: "brightness(1.05) saturate(1.02) contrast(0.98)" }}
               />
               {caption && (
                 <p className="absolute bottom-3 left-0 right-0 text-center font-script text-2xl text-rose">
@@ -58,7 +58,7 @@ export const PhotoBlock = ({
   if (variant === "left" || variant === "right") {
     const reverse = variant === "right";
     return (
-      <section className="py-20 md:py-28 px-6">
+      <section className="py-12 md:py-20 px-6">
         <div
           className={`container max-w-5xl grid md:grid-cols-2 gap-10 md:gap-16 items-center ${
             reverse ? "md:[&>*:first-child]:order-2" : ""
@@ -99,7 +99,7 @@ export const PhotoBlock = ({
 
   // center with overlay text
   return (
-    <section className="py-20 md:py-28 px-6">
+    <section className="py-12 md:py-20 px-6">
       <div className="container max-w-3xl">
         <Reveal>
           <div className="relative polaroid max-w-xl border-0 px-0 text-center mx-0 border-secondary-foreground text-primary-foreground bg-destructive-foreground">
@@ -107,7 +107,7 @@ export const PhotoBlock = ({
               src={image}
               alt={title || caption || ""}
               loading="lazy"
-              className="w-full aspect-[4/5] object-contain text-sm rounded py-0 border-none shadow-none opacity-100 mx-0 px-0 border-8 animate-slow-zoom"
+              className="w-full aspect-[4/5] object-contain text-sm rounded py-0 border-none shadow-none opacity-100 mx-0 px-0 border-8"
             />
             {title && (
               <div className="absolute inset-3 bottom-12 flex items-end justify-center pointer-events-none">

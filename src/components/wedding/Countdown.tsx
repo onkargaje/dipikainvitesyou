@@ -39,7 +39,7 @@ export const Countdown = () => {
   }, []);
 
   return (
-    <section className="py-24 md:py-32 px-6 relative">
+    <section className="py-14 md:py-20 px-6 relative">
       <div className="container max-w-3xl">
         <Reveal>
           <SectionTitle eyebrow="​" title="Counting Down to Forever" />
