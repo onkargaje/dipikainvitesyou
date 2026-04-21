@@ -30,8 +30,8 @@ export const PhotoBlock = ({
                 src={image}
                 alt={caption || title || ""}
                 loading="lazy"
-                className="w-full h-auto object-contain rounded-sm bg-cream animate-slow-zoom"
-                style={{ filter: "brightness(1.05) saturate(1.02) contrast(0.98)" }}
+              className="w-full h-auto object-contain rounded-sm bg-cream"
+              style={{ filter: "brightness(1.05) saturate(1.02) contrast(0.98)" }}
               />
               {caption && (
                 <p className="absolute bottom-3 left-0 right-0 text-center font-script text-2xl text-rose">
@@ -107,7 +107,7 @@ export const PhotoBlock = ({
               src={image}
               alt={title || caption || ""}
               loading="lazy"
-              className="w-full aspect-[4/5] object-contain text-sm rounded py-0 border-none shadow-none opacity-100 mx-0 px-0 border-8 animate-slow-zoom"
+              className="w-full aspect-[4/5] object-contain text-sm rounded py-0 border-none shadow-none opacity-100 mx-0 px-0 border-8"
             />
             {title && (
               <div className="absolute inset-3 bottom-12 flex items-end justify-center pointer-events-none">

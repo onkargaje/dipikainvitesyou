@@ -62,7 +62,7 @@ const Index = () => {
           title="Two Souls, One Story"
           text="From quiet conversations to whispered promises — every moment led us here. To this season, this love, this forever."
           rotate={-2}
-          interval={3000}
+          interval={5500}
           effect="fade"
           aspect="aspect-square"
           showDots
@@ -76,7 +76,7 @@ const Index = () => {
           title="​A Little Laughter"
           text="Because love is grand, but laughter is the music it dances to. Here's to a lifetime of inside jokes and stolen smiles."
           rotate={2}
-          interval={2200}
+          interval={4500}
           effect="slide"
           aspect="aspect-square"
           showDots

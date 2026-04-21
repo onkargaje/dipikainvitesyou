@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
 
 interface Props {
   /** when true, attempt to start playing */
   active: boolean;
 }
 
+/**
+ * Vintage gramophone music toggle with floating notes when playing.
+ * Positioned top-right, fixed.
+ */
 export const MusicPlayer = ({ active }: Props) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [muted, setMuted] = useState(false);
@@ -35,32 +38,72 @@ export const MusicPlayer = ({ active }: Props) => {
     setMuted(a.muted);
   };
 
+  const isOn = playing && !muted;
+
   return (
     <>
       <audio ref={audioRef} src="/bg-music.mp4" loop preload="auto" />
-      <button
-        onClick={toggle}
-        aria-label={muted ? "Unmute music" : "Mute music"}
-        className={`fixed bottom-6 right-6 z-[80] h-12 w-12 rounded-full glass flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 ${
-          playing && !muted ? "animate-pulse-soft" : ""
-        }`}
-      >
-        <span className="relative h-5 w-5 flex items-center justify-center">
-          <Volume2
-            className={`absolute h-5 w-5 text-rose transition-all duration-300 ${
-              muted || !playing ? "opacity-0 scale-50" : "opacity-100 scale-100"
+
+      <div className="fixed top-4 right-4 z-[80] pointer-events-none">
+        <div className="relative">
+          {/* Floating notes */}
+          {isOn && (
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 h-16 w-16 pointer-events-none overflow-visible">
+              <span className="music-note music-note-1">♪</span>
+              <span className="music-note music-note-2">♫</span>
+              <span className="music-note music-note-3">♩</span>
+            </div>
+          )}
+
+          <button
+            onClick={toggle}
+            aria-label={muted ? "Unmute music" : "Mute music"}
+            className={`pointer-events-auto h-14 w-14 rounded-full glass flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 ${
+              isOn ? "animate-pulse-soft" : ""
             }`}
-          />
-          <VolumeX
-            className={`absolute h-5 w-5 text-rose transition-all duration-300 ${
-              muted || !playing ? "opacity-100 scale-100" : "opacity-0 scale-50"
-            }`}
-          />
-        </span>
-        {playing && !muted && (
-          <span className="absolute inset-0 rounded-full ring-2 ring-rose/40 animate-ping" />
-        )}
-      </button>
+          >
+            <Gramophone spinning={isOn} />
+          </button>
+        </div>
+      </div>
     </>
   );
 };
+
+const Gramophone = ({ spinning }: { spinning: boolean }) => (
+  <svg
+    viewBox="0 0 64 64"
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-8 w-8"
+    aria-hidden="true"
+  >
+    {/* Horn */}
+    <path
+      d="M40 6 C 56 14, 60 24, 56 32 L 38 24 C 36 18, 36 12, 40 6 Z"
+      fill="hsl(var(--gold-deep))"
+      stroke="hsl(var(--rose-dust))"
+      strokeWidth="1.2"
+    />
+    <ellipse cx="48" cy="19" rx="3" ry="6" fill="hsl(var(--rose-dust))" opacity="0.5" />
+    {/* Tube/arm */}
+    <path
+      d="M40 24 L 32 36"
+      stroke="hsl(var(--gold-deep))"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+    />
+    {/* Base */}
+    <rect x="14" y="40" width="36" height="12" rx="3" fill="hsl(var(--rose-dust))" />
+    <rect x="12" y="50" width="40" height="4" rx="2" fill="hsl(var(--gold-deep))" />
+    {/* Record disc */}
+    <g
+      style={{
+        transformOrigin: "32px 46px",
+        animation: spinning ? "spin 3s linear infinite" : "none",
+      }}
+    >
+      <circle cx="32" cy="46" r="6" fill="hsl(var(--foreground))" opacity="0.85" />
+      <circle cx="32" cy="46" r="1.2" fill="hsl(var(--gold))" />
+    </g>
+  </svg>
+);

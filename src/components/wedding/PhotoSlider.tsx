@@ -28,11 +28,11 @@ export const PhotoSlider = ({
   images,
   title,
   text,
-  interval = 3500,
+  interval = 5500,
   effect = "slide",
   showDots = false,
   aspect = "aspect-[4/5]",
-  zoom = true,
+  zoom = false,
   bright = false,
   variant = "center",
   rotate = 0,
@@ -61,7 +61,7 @@ export const PhotoSlider = ({
 
   const Frame = (
     <div
-      className="polaroid mx-auto max-w-md md:max-w-lg"
+      className="polaroid mx-auto max-w-lg md:max-w-xl"
       style={{ transform: `rotate(${rotate}deg)` }}
     >
       <div

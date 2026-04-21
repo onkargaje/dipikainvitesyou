@@ -202,13 +202,31 @@
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { scrollbar-width: none; }
 
-  /* Slow Ken-Burns zoom for hero background */
-  @keyframes ken-burns {
-    0%   { transform: scale(1.0); transform-origin: center center; }
-    50%  { transform: scale(1.15); transform-origin: 55% 45%; }
-    100% { transform: scale(1.0); transform-origin: center center; }
+  /* Spin (used by gramophone disc) */
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
   }
-  .animate-ken-burns { animation: ken-burns 24s var(--ease-silk) infinite; }
+
+  /* Floating music notes from gramophone */
+  .music-note {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    color: hsl(var(--rose-dust));
+    font-size: 14px;
+    text-shadow: 0 1px 4px hsl(var(--gold) / 0.5);
+    opacity: 0;
+    animation: note-float 2.4s ease-out infinite;
+  }
+  .music-note-1 { animation-delay: 0s;   }
+  .music-note-2 { animation-delay: 0.8s; font-size: 16px; }
+  .music-note-3 { animation-delay: 1.6s; font-size: 12px; }
+  @keyframes note-float {
+    0%   { transform: translate(-50%, 0) rotate(-8deg); opacity: 0; }
+    20%  { opacity: 1; }
+    100% { transform: translate(calc(-50% + 18px), -42px) rotate(12deg); opacity: 0; }
+  }
 
   /* Gentle slow zoom-in for single feature photos */
   @keyframes slow-zoom {
