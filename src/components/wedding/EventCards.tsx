@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, SectionTitle } from "./Reveal";
 import { events } from "@/lib/wedding";
-import { Calendar, Clock, MapPin, Shirt, X } from "lucide-react";
+import { Calendar, Clock, Shirt, X } from "lucide-react";
 import engagementBg from "@/assets/event-engagement.jpg";
 import haldiBg from "@/assets/event-haldi.jpg";
 import sangeetBg from "@/assets/event-sangeet.jpg";
@@ -35,13 +35,12 @@ export const EventCards = () => {
 
         <div className="grid grid-cols-1 gap-6 md:gap-8">
           {events.map((e, i) => {
-            const floatClass = ["animate-float", "animate-float-delay-1", "animate-float-delay-2", "animate-float-delay-3"][i % 4];
             return (
               <Reveal key={e.key} delay={i * 0.08} className="opacity-100">
                 <button
                   type="button"
                   onClick={() => setActive(e)}
-                  className={`group relative w-full text-left rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] aspect-[3/4] max-w-md mx-auto flex flex-col items-center justify-start px-6 py-12 md:px-16 md:py-20 bg-cream ${floatClass}`}
+                  className={`group relative w-full text-left rounded-3xl overflow-hidden shadow-[0_15px_40px_-15px_hsl(var(--gold)/0.4)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_hsl(var(--gold)/0.6)] aspect-[3/4] max-w-md mx-auto flex flex-col items-center justify-start px-6 py-12 md:px-16 md:py-20 bg-cream`}
                   style={{
                     backgroundImage: `url(${themeBg[e.theme]})`,
                     backgroundSize: "contain",
@@ -59,7 +58,6 @@ export const EventCards = () => {
                       <ul className="space-y-2 md:space-y-2.5 inline-block text-left">
                         <Row icon={<Calendar className="h-4 w-4" />} value={e.date} />
                         <Row icon={<Clock className="h-4 w-4" />} value={e.time} />
-                        <Row icon={<MapPin className="h-4 w-4" />} value={e.venue} />
                         {e.dress && e.dress.trim() && (
                           <Row icon={<Shirt className="h-4 w-4" />} value={e.dress} />
                         )}
@@ -81,7 +79,7 @@ export const EventCards = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[90] flex items-center justify-center px-4 py-6 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[90] flex items-center justify-center px-4 py-6 bg-black/55 backdrop-blur-md"
             onClick={() => setActive(null)}
           >
             <motion.div
@@ -118,7 +116,6 @@ export const EventCards = () => {
                 <ul className="space-y-3 md:space-y-4 inline-block text-left">
                   <Row icon={<Calendar className="h-5 w-5" />} value={active.date} large />
                   <Row icon={<Clock className="h-5 w-5" />} value={active.time} large />
-                  <Row icon={<MapPin className="h-5 w-5" />} value={active.venue} large />
                   {active.dress && active.dress.trim() && (
                     <Row icon={<Shirt className="h-5 w-5" />} value={active.dress} large />
                   )}
