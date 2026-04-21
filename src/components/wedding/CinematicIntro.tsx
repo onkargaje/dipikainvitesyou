@@ -51,7 +51,7 @@ export const CinematicIntro = ({ onEnter }: Props) => {
               className="text-center"
             >
               <p className="font-script text-3xl md:text-5xl text-white/90 mb-2 drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
-                You're invited
+                You're Invited By
               </p>
               <h1 className="font-serif text-4xl md:text-7xl text-white mb-8 drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
                 Dipika &amp; Family
