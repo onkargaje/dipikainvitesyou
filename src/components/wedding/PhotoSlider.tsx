@@ -123,7 +123,7 @@ export const PhotoSlider = ({
   if (variant === "left" || variant === "right") {
     const reverse = variant === "right";
     return (
-      <section className="py-12 md:py-18 px-6">
+      <section className="py-12 md:py-20 px-6">
         <div
           className={`container max-w-5xl grid md:grid-cols-2 gap-10 md:gap-16 items-center ${
             reverse ? "md:[&>*:first-child]:order-2" : ""
@@ -148,7 +148,7 @@ export const PhotoSlider = ({
   }
 
   return (
-    <section className="py-12 md:py-18 px-6">
+    <section className="py-12 md:py-20 px-6">
       <div className="container max-w-3xl">
         <Reveal>{Frame}</Reveal>
         {title && (
