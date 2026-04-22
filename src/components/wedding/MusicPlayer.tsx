@@ -42,7 +42,7 @@ export const MusicPlayer = ({ active }: Props) => {
 
   return (
     <>
-      <audio ref={audioRef} src="/bg-music.mp4" loop preload="auto" />
+      <audio ref={audioRef} src="/bg-music.mp4" loop preload="none" />
 
       <div className="fixed top-4 right-4 z-[80] pointer-events-none">
         <div className="relative">
