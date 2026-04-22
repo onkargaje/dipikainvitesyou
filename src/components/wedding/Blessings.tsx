@@ -18,24 +18,20 @@ interface Blessing {
   isSeed?: boolean;
 }
 
-// Stable random count between 10-20 for seeded blessings (per session)
-const seedRand = (key: string) => {
-  let h = 0;
-  for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) | 0;
-  return 10 + (Math.abs(h) % 11);
-};
-
+// Stable count for seeded blessings
 const SEED_RAW = [
-  { id: "s1", name: "Kshitij", message: "Wishing you a lifetime of love, laughter, and beautiful memories. ✨" },
-  { id: "s2", name: "Mom & Dad", message: "May your love story be a beautiful one. Cheers to forever!" },
-  { id: "s3", name: "Shivani", message: "\"From sitting by your side in the office to standing by you as your bridesmaid — what a beautiful journey to witness. Wishing you both a lifetime of love, laughter, and happiness. Congratulations Cuties❤️🧿\"" },
-  { id: "s4", name: "Onkar", message: "Two hearts, one soul — congratulations on your beautiful journey." },
-  { id: "s5", name: "Manisha", message: "I'm so happy to see you starting this new chapter. Just don't forget me now that you're becoming a \"responsible married woman\" (I'll still expect the same drama, okay? 😄)\n\nLove you always 💕" },
+  { id: "s3", name: "Shivani", message: "\"From sitting by your side in the office to standing by you as your bridesmaid — what a beautiful journey to witness. Wishing you both a lifetime of love, laughter, and happiness. Congratulations Cuties❤️🧿\"", like_count: 12 },
+  { id: "s1", name: "Kshitij", message: "Wishing you a lifetime of love, laughter, and beautiful memories. ✨", like_count: 15 },
+  { id: "s2", name: "Mom & Dad", message: "May your love story be a beautiful one. Cheers to forever!", like_count: 10 },
+  { id: "s4", name: "Onkar", message: "Two hearts, one soul — congratulations on your beautiful journey.", like_count: 3 },
+  { id: "s5", name: "Manisha", message: "I'm so happy to see you starting this new chapter. Just don't forget me now that you're becoming a \"responsible married woman\" (I'll still expect the same drama, okay? 😄)\n\nLove you always 💕", like_count: 5 },
 ];
 
 const seed: Blessing[] = SEED_RAW.map((s) => ({
-  ...s,
-  like_count: seedRand(s.id),
+  id: s.id,
+  name: s.name,
+  message: s.message,
+  like_count: s.like_count,
   created_at: "2026-01-01T00:00:00Z",
   session_id: null,
   isSeed: true,

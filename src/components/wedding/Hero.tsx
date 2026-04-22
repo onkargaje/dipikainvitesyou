@@ -39,7 +39,7 @@ export const Hero = () => {
           className="flex items-center justify-center gap-4 my-3"
         >
           <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-gold/80" />
-          <span className="font-serif italic text-gold text-4xl sm:text-5xl drop-shadow-lg">&</span>
+          <span className="font-serif italic text-4xl drop-shadow-lg text-red-600 sm:text-6xl">&</span>
           <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-gold/80" />
         </motion.div>
 
