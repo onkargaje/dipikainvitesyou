@@ -42,6 +42,11 @@ export const PhotoBlock = ({
                   {caption}
                 </p>
               )}
+              {photoId && (
+                <div className="absolute top-3 right-3">
+                  <LikeButton kind="photo" itemId={photoId} variant="overlay" />
+                </div>
+              )}
             </div>
             {title && (
               <div className="text-center mt-10">
