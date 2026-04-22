@@ -34,7 +34,7 @@ export const LikeButton = ({
   const [pulse, setPulse] = useState(0);
   const sessionId = getSessionId();
   const table = tableFor(kind);
-  const col = colFor(kind);
+  const col = colFor(kind) as "blessing_id";
 
   useEffect(() => {
     let cancelled = false;
