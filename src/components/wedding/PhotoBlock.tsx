@@ -89,6 +89,11 @@ export const PhotoBlock = ({
                   {caption}
                 </p>
               )}
+              {photoId && (
+                <div className="absolute top-3 right-3">
+                  <LikeButton kind="photo" itemId={photoId} variant="overlay" />
+                </div>
+              )}
             </div>
           </Reveal>
           <Reveal delay={0.15}>
@@ -130,6 +135,11 @@ export const PhotoBlock = ({
               <p className="absolute bottom-3 left-0 right-0 text-center font-script text-2xl text-rose">
                 {caption}
               </p>
+            )}
+            {photoId && (
+              <div className="absolute top-3 right-3 z-20">
+                <LikeButton kind="photo" itemId={photoId} variant="overlay" />
+              </div>
             )}
           </div>
         </Reveal>
