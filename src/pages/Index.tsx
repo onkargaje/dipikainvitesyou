@@ -36,7 +36,7 @@ const Index = () => {
       <MusicPlayer active={introDone} />
 
       <FloatingOrbs />
-      <PetalField density={22} />
+      <PetalField density={26} />
 
       <div className="relative z-10">
         <Hero />
@@ -45,6 +45,7 @@ const Index = () => {
           variant="center"
           image={ourBeginning}
           title="Our Beginning"
+          photoId="our-beginning"
         />
 
         <Countdown />
@@ -59,6 +60,7 @@ const Index = () => {
           effect="fade"
           aspect="aspect-square"
           showDots
+          likeIdPrefix="two-soul"
         />
 
         <Quote />
@@ -74,6 +76,7 @@ const Index = () => {
           aspect="aspect-square"
           showDots
           bright
+          likeIdPrefix="laughter"
         />
 
         <EventCards />
@@ -82,6 +85,7 @@ const Index = () => {
           variant="feature"
           image={foreverBegins}
           caption="Forever begins here"
+          photoId="forever-begins"
         />
 
         <Blessings />

@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { LikeButton } from "./LikeButton";
 
 interface PhotoBlockProps {
   image: string;
@@ -7,6 +8,8 @@ interface PhotoBlockProps {
   text?: string;
   variant?: "center" | "left" | "right" | "feature";
   rotate?: number;
+  /** Stable id used for likes; if omitted, like button is hidden */
+  photoId?: string;
 }
 
 export const PhotoBlock = ({
@@ -16,6 +19,7 @@ export const PhotoBlock = ({
   text,
   variant = "center",
   rotate = 0,
+  photoId,
 }: PhotoBlockProps) => {
   if (variant === "feature") {
     return (
@@ -37,6 +41,11 @@ export const PhotoBlock = ({
                 <p className="absolute bottom-3 left-0 right-0 text-center font-script text-2xl text-rose">
                   {caption}
                 </p>
+              )}
+              {photoId && (
+                <div className="absolute top-3 right-3">
+                  <LikeButton kind="photo" itemId={photoId} variant="overlay" />
+                </div>
               )}
             </div>
             {title && (
@@ -80,6 +89,11 @@ export const PhotoBlock = ({
                   {caption}
                 </p>
               )}
+              {photoId && (
+                <div className="absolute top-3 right-3">
+                  <LikeButton kind="photo" itemId={photoId} variant="overlay" />
+                </div>
+              )}
             </div>
           </Reveal>
           <Reveal delay={0.15}>
@@ -121,6 +135,11 @@ export const PhotoBlock = ({
               <p className="absolute bottom-3 left-0 right-0 text-center font-script text-2xl text-rose">
                 {caption}
               </p>
+            )}
+            {photoId && (
+              <div className="absolute top-3 right-3 z-20">
+                <LikeButton kind="photo" itemId={photoId} variant="overlay" />
+              </div>
             )}
           </div>
         </Reveal>

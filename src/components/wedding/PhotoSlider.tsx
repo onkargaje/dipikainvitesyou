@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Reveal } from "./Reveal";
+import { LikeButton } from "./LikeButton";
 
 interface PhotoSliderProps {
   images: string[];
@@ -22,6 +23,8 @@ interface PhotoSliderProps {
   /** caption layout: alongside (left/right) or none */
   variant?: "left" | "right" | "center";
   rotate?: number;
+  /** Prefix used to build a stable like id per image (e.g. "two-soul") */
+  likeIdPrefix?: string;
 }
 
 export const PhotoSlider = ({
@@ -36,6 +39,7 @@ export const PhotoSlider = ({
   bright = false,
   variant = "center",
   rotate = 0,
+  likeIdPrefix,
 }: PhotoSliderProps) => {
   const autoplay = Autoplay({
     delay: interval,
@@ -97,6 +101,15 @@ export const PhotoSlider = ({
                       : undefined
                   }
                 />
+                {likeIdPrefix && (
+                  <div className="absolute top-3 right-3 z-20">
+                    <LikeButton
+                      kind="photo"
+                      itemId={`${likeIdPrefix}-${i + 1}`}
+                      variant="overlay"
+                    />
+                  </div>
+                )}
               </div>
             );
           })}
