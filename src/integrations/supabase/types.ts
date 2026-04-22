@@ -14,24 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
+      blessing_likes: {
+        Row: {
+          blessing_id: string
+          created_at: string
+          id: string
+          session_id: string
+        }
+        Insert: {
+          blessing_id: string
+          created_at?: string
+          id?: string
+          session_id: string
+        }
+        Update: {
+          blessing_id?: string
+          created_at?: string
+          id?: string
+          session_id?: string
+        }
+        Relationships: []
+      }
       blessings: {
         Row: {
           created_at: string
           id: string
+          like_count: number
           message: string
           name: string
+          session_id: string | null
         }
         Insert: {
           created_at?: string
           id?: string
+          like_count?: number
           message: string
           name: string
+          session_id?: string | null
         }
         Update: {
           created_at?: string
           id?: string
+          like_count?: number
           message?: string
           name?: string
+          session_id?: string | null
+        }
+        Relationships: []
+      }
+      photo_likes: {
+        Row: {
+          created_at: string
+          id: string
+          photo_id: string
+          session_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          photo_id: string
+          session_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          photo_id?: string
+          session_id?: string
         }
         Relationships: []
       }
