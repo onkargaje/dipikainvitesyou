@@ -36,7 +36,7 @@ const Index = () => {
       <MusicPlayer active={introDone} />
 
       <FloatingOrbs />
-      <PetalField density={22} />
+      <PetalField density={26} />
 
       <div className="relative z-10">
         <Hero />

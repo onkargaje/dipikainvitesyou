@@ -52,7 +52,7 @@ const Field = ({ count, layer }: FieldProps) => {
         id: i,
         left: Math.random() * 100,
         delay: Math.random() * 14,
-        duration: isBg ? 26 + Math.random() * 18 : 12 + Math.random() * 14,
+        duration: isBg ? 22 + Math.random() * 15 : 10 + Math.random() * 12,
         size: isBg ? 26 + Math.random() * 30 : 10 + Math.random() * 18,
         blur: isBg ? 2 + Math.random() * 3 : Math.random() < 0.25 ? Math.random() * 1.2 : 0,
         opacity: isBg ? 0.2 + Math.random() * 0.2 : 0.55 + Math.random() * 0.3,
