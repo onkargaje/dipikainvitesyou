@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { LikeButton } from "./LikeButton";
 
 interface PhotoBlockProps {
   image: string;
@@ -7,6 +8,8 @@ interface PhotoBlockProps {
   text?: string;
   variant?: "center" | "left" | "right" | "feature";
   rotate?: number;
+  /** Stable id used for likes; if omitted, like button is hidden */
+  photoId?: string;
 }
 
 export const PhotoBlock = ({
@@ -16,6 +19,7 @@ export const PhotoBlock = ({
   text,
   variant = "center",
   rotate = 0,
+  photoId,
 }: PhotoBlockProps) => {
   if (variant === "feature") {
     return (
